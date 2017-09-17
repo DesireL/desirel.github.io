@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>
+    欲往之城
+    
+        | 填坑造bug
+    
+</title>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<link rel="stylesheet" href="/style/style.css">
+<script src="/script/jquery.min.js"></script>
+<script>
+    var CONFIG = {
+        title: "欲往之城",
+        author: "luzhihao",
+        lightbox: true,
+        animate: true
+    }
+</script>
+
+
+
+    <link rel="stylesheet" href="/lightbox/css/lightbox.min.css">
+
+
+
+
+    <link rel="stylesheet" href="/syuanpi/syuanpi.min.css">
+
+
+
+
+    <link rel="icon" href="http://tva3.sinaimg.cn/crop.0.0.640.640.180/006nQcI4jw8f1sogqbq59j30hs0hsjs8.jpg">
+
+
+
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    	ga('create', 'UA-99269469-1', 'auto');
+    	ga('send', 'pageview');
+    </script>
+
+
+
+    <script type="text/javascript">
+    	var _hmt = _hmt || [];
+    	(function() {
+      	    var hm = document.createElement("script");
+      	    hm.src = "https://hm.baidu.com/hm.js?09c10f331fa642a7db547481ad945d17";
+      	    var s = document.getElementsByTagName("script")[0];
+      	    s.parentNode.insertBefore(hm, s);
+    	})();
+    </script>
+
+
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    <script>
+        (function(){
+    	    var bp = document.createElement('script');
+      	    var curProtocol = window.location.protocol.split(':')[0];
+      	    if (curProtocol === 'https') {
+      	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+      	    }
+      	    else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+     	    }
+      	    var s = document.getElementsByTagName("script")[0];
+      	    s.parentNode.insertBefore(bp, s);
+    	})();
+    </script>
+
+
+
+</head>
+<body>
+    <div class="progress">
+    <div class="progress-inner"></div>
+</div>
+    <div class="body">
+    <div class="tagcloud" id="tagcloud">
+    <div class="tagcloud-inner">
+        <a href="/tags/Others/" style="font-size: 14px;">Others</a> <a href="/tags/debian/" style="font-size: 14px;">debian</a> <a href="/tags/linux/" style="font-size: 14px;">linux</a> <a href="/tags/nas/" style="font-size: 14px;">nas</a> <a href="/tags/openmediavault/" style="font-size: 14px;">openmediavault</a> <a href="/tags/开发/" style="font-size: 14px;">开发</a> <a href="/tags/随笔/" style="font-size: 14px;">随笔</a>
+    </div>
+</div>
+    <header class="header" id="header">
+    <div class="title syuanpi tvIn">
+    <div class="table">
+        <div class="connect">
+            <div class="connect-inner">
+                <span><a href="/">欲往之城</a></span>
+                
+                    <span id="subtitle">填坑造bug</span>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <nav class="main-nav syuanpi tvIn">
+<div class="table">
+
+    <ul class="menu">
+        
+        
+            <li class="menu-item">
+                <a href="/">
+                    <span>文章</span>
+                    
+                        <span class="menu-item-label">article</span>
+                    
+                </a>
+            </li>
+        
+        
+        
+            <li class="menu-item">
+                <a href="/archives">
+                    <span>归档</span>
+                    
+                        <span class="menu-item-label">archives</span>
+                    
+                </a>
+            </li>
+        
+        
+        
+            <li class="menu-item">
+                <a href="javascript:;" id="tags">
+                    <span>标签</span>
+                    
+                        <span class="menu-item-label">tags</span>
+                    
+                </a>
+            </li>
+        
+        
+        
+            <li class="menu-item">
+                <a href="/about">
+                    <span>关于</span>
+                    
+                        <span class="menu-item-label">about</span>
+                    
+                </a>
+            </li>
+        
+        
+    </ul>
+
+</div>
+</nav>
+<div class="mobile-nav"></div>
+</header>
+    <div class="container">
+        <main class="main" id="main">
+            
+    
+
+<section class="posts">
+    
+        
+    <article class="post">
+        <header class="post-header">
+            <div class="post-time syuanpi riseIn-light back-1">
+                <span>2017年6月8日</span>
+            </div>
+            <h1 class="post-title syuanpi riseIn-light back-2">
+            
+                <a href="/2017/06/08/wdmc-debian-nas-scheme/">WDMC刷纯净Debian实现NAS方案</a>
+            
+            </h1>
+            
+        </header>
+        <div class="post-content syuanpi riseIn-light back-3">
+            
+                
+                    <h1 id="WDMC刷Debian-NAS-方案"><a href="#WDMC刷Debian-NAS-方案" class="headerlink" title="WDMC刷Debian NAS 方案"></a>WDMC刷Debian NAS 方案</h1><p>　　基础平台为 Debian</p>
+<h3 id="计划方案"><a href="#计划方案" class="headerlink" title="计划方案"></a>计划方案</h3><p>　　共享使用Samba</p>
+<p>　　文件管理使用芒果云</p>
+<p>　　Resilio Sync 开启文件同步</p>
+<p>　　下载使用迅雷远程下载 + Aria2（可选）</p>
+<p>　　电影播放使用Plex</p>
+<p>　　搭建OwnCloud使用私人云</p>
+<p>　　内网穿透通过路由器来搞</p>
+<p>　　Mac TimeMachine 使用netatalk搭建</p>
+<h3 id="实际情况"><a href="#实际情况" class="headerlink" title="实际情况"></a>实际情况</h3><p>　　Samba可以完美搭建，速度30-50甚至可以更高</p>
+<p>　　芒果云完美搭建</p>
+<p>　　Resilio Sync、迅雷、Aria2未安装使用（两者理论上都可以完美实现）</p>
+<p>　　Plex、OwnCloud未搭建，plex有安装包直接安装理论比较方便，OwnCloud稍微复杂一点，理论上是可行的</p>
+<p>　　最重要的实现Mac TimeMachine 搭建好之后Mac无法连接，此方案pass掉　　</p>
+<h3 id="最终解决办法"><a href="#最终解决办法" class="headerlink" title="最终解决办法"></a>最终解决办法</h3><p>　　刷回西数固件，破解之后安装Aria2（视情况而定）、迅雷、Plex、BTSync。</p>
+<p>　　好了，此文已完成，开始刷回原厂固件。。。</p>
+<p>　　我选择狗带🐶😳。。。</p>
+<p><dvi align="center"><img src="http://wx1.sinaimg.cn/mw1024/006nQcI4ly1fge6nwgdazj3062062mxe.jpg" alt="狗带"></dvi></p>
+<p>　　PS：如有需要教程可留言</p>
+
+                
+            
+        
+        </div>
+        
+    </article>
+    
+
+    
+        
+    <article class="post">
+        <header class="post-header">
+            <div class="post-time syuanpi riseIn-light back-1">
+                <span>2017年6月5日</span>
+            </div>
+            <h1 class="post-title syuanpi riseIn-light back-2">
+            
+                <a href="/2017/06/05/nas-openmediavault-install/">NAS折腾-安装Debian+OpenMediaVault</a>
+            
+            </h1>
+            
+        </header>
+        <div class="post-content syuanpi riseIn-light back-3">
+            
+                
+                    <h1 id="NAS折腾记录-WD-Mycloud刷纯净版Debian安装OpenMediaVault"><a href="#NAS折腾记录-WD-Mycloud刷纯净版Debian安装OpenMediaVault" class="headerlink" title="NAS折腾记录-WD Mycloud刷纯净版Debian安装OpenMediaVault"></a>NAS折腾记录-WD Mycloud刷纯净版Debian安装OpenMediaVault</h1><h2 id="什么是NAS？为什么要买NAS"><a href="#什么是NAS？为什么要买NAS" class="headerlink" title="什么是NAS？为什么要买NAS?"></a>什么是NAS？为什么要买NAS?</h2><blockquote>
+<p><strong><em>NAS</em></strong> — 网络连接存储设备<strong>（</strong>N<strong>etwork </strong>A<strong>ttached </strong>S<strong>torage</strong>)，是一种专门的数据存储技术的名称，它可以直接连接在电脑网络上面，对异质网络用户提供了集中式数据访问服务。</p>
+</blockquote>
+<p>　　为什么要买NAS？      EXM？     不要问我为什么要买nas，我心口疼。。。</p>
+<div align="center"> <img src="http://wx2.sinaimg.cn/mw1024/006nQcI4ly1fge26tpkn8j30k00gvabi.jpg" alt="图"></div>
+
+<p>　　在舍友的安利下二手东入了西数的 WD MyCloud 3T版，到手用了一个月之后才有想法折腾nas。</p>
+<p>　　闲话少说，进入正题：</p>
+<p>　　逛NAS论坛破解固件，刷了Aria2（搞好了断电续传，但是重启之后下载完成的任务就会消失）、迅雷下载可以远程完美解决、Transmission（没这方面需求，所以没怎么了解，装了没用过）、miniDLNA（也没用过）、Plex（这货用起来还不错，就是有时候没字幕找字幕麻烦，有时候匹配信息不对对于有强迫症的我实在受不了一个一个去点击修改匹配信息，播放视频对于MC这种设备不太友好有时候会导致MC很卡，设置会高负荷运转）、Resilio Sync（这是个好软件，强力推荐装一个，很简单没啥可说的，附一个你看了会说卧槽的<a href="http://notepad.live/share/802e1fkeys" target="_blank" rel="external">链接 ：）</a>）。</p>
+<p>　　装了上面说的那么多插件已经可以满足正常的存储、娱乐、下载、同步需求了，那还有OMV什么事情呢？你问我呀，哦那是因为我有强迫症呀。</p>
+<p>　　虽然折腾了装好了这些插件但还是不完美，有诸多缺点，强迫症真的会受不了的😂，刚好论坛里面看到有刷纯净版Debian + <a href="http://www.openmediavault.cn/" target="_blank" rel="external">OpenMediaVault</a>，俄罗斯FOX大神也说这个很好，所以立马刷呗。</p>
+<h2 id="Debian"><a href="#Debian" class="headerlink" title="Debian"></a>Debian</h2><p>　　安装好Ddebian之后的配置问题：</p>
+<p>　　更新源debian源：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nano /etc/apt/sources.list</div></pre></td></tr></table></figure>
+<p>　　替换原有内容为下面内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">deb http://mirrors.ustc.edu.cn/debian/ jessie main contrib non-free</div><div class="line">deb-src http://mirrors.ustc.edu.cn/debian/ jessie main contrib non-free</div><div class="line">deb http://mirrors.ustc.edu.cn/debian/ jessie-updates main contrib non-free</div><div class="line">deb-src http://mirrors.ustc.edu.cn/debian/ jessie-updates main contrib non-free</div><div class="line">deb http://mirrors.ustc.edu.cn/debian/ jessie-backports main contrib non-free</div><div class="line">deb-src http://mirrors.ustc.edu.cn/debian/ jessie-backports main contrib non-free</div><div class="line">deb http://mirrors.ustc.edu.cn/debian-security/ jessie/updates main contrib non-free</div><div class="line">deb-src http://mirrors.ustc.edu.cn/debian-security/ jessie/updates main contrib non-free</div></pre></td></tr></table></figure>
+<p>　　更新：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt-get update </div><div class="line">apt-get upgrade</div></pre></td></tr></table></figure>
+<p>　　!!! 执行upgrade命令的时候会更新许多包，更新的时候可能会多次提示:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Processing triggers for man-db ...</div><div class="line">fopen: Permission denied</div></pre></td></tr></table></figure>
+<p>　　强迫症看了那真的是受不了😖，执行下面命令可以解决此问题：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chown -R man:root /var/cache/man</div></pre></td></tr></table></figure>
+<p>　　设置语言：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt-get install locales</div><div class="line">dpkg-reconfigure locales</div></pre></td></tr></table></figure>
+<p>　　同步时间、设置时区：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt-get install -y ntp</div><div class="line">cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</div></pre></td></tr></table></figure>
+<p>　　以上内容参考地址：<a href="http://www.nasyun.com/thread-29036-1-1.html" target="_blank" rel="external">将WD Mycloud Gen2改造成私人在线云播服务器</a></p>
+<h2 id="OpenMediaVault"><a href="#OpenMediaVault" class="headerlink" title="OpenMediaVault"></a>OpenMediaVault</h2><blockquote>
+<p>OpenMediaVault，是一个开源的基于Debian Linux的下一代网络附加存储(<a href="http://baike.baidu.com/item/NAS/3465615" target="_blank" rel="external">NAS</a>)解决方案。</p>
+</blockquote>
+<div align="center"><a href="http://www.openmediavault.org/" target="_blank" rel="external"><img src="http://wx4.sinaimg.cn/mw1024/006nQcI4gy1fgbngom4gej31kw0tu7q1.jpg" alt="图"></a></div>
+
+<p>　　OMV系统有挺多好处，但是由于时间原因（折腾其他NAS方案、上班、HP GEN8快到了）无法从以前逛过的网站罗列可用的功能，在此不表。</p>
+<p>　　安装Debian的时候建议分区的时候分完系统区之后单独分一个区出来存放数据，然后这个分区在系统启动的时候不要在/etc/fstab设置defaults挂载，因为如果设置该分区开机启动挂载defaults之后，进入omv添加共享文件夹是无法选择那个分区的。</p>
+<p>　　我打算安装omv的一点原因是被owncloud吸引了，但是我安装的3.x版本安装起来比较麻烦，而且共享文件夹设置之类的有问题总是报错。</p>
+<p>　　PS：本人在写完这边博文的时候，已经放弃omv了，因为西数的这款NAS是放在家里的，所以有离线下载功能下电影，晚上回家每天定时备份下Mac数据就行，所以没必要浪费很多时间去折腾omv。西数3T的新方案是：Debian+迅雷（远程下载）+Aria2（非必须）+Resilio Sync（备份下Mac上面的开发路径和其他一些重要一点的文件）+Plex（看看电影，电影尽量选择10G以下以降低硬件负荷），后续会放出此方案的关键步骤和方法。</p>
+
+                
+            
+        
+        </div>
+        
+    </article>
+    
+
+    
+        
+    <article class="post">
+        <header class="post-header">
+            <div class="post-time syuanpi riseIn-light back-1">
+                <span>2017年5月22日</span>
+            </div>
+            <h1 class="post-title syuanpi riseIn-light back-2">
+            
+                <a href="/2017/05/22/linux-command-1/">Linux命令（一）</a>
+            
+            </h1>
+            
+        </header>
+        <div class="post-content syuanpi riseIn-light back-3">
+            
+                
+                    <blockquote>
+<p>作为一个猿类，熟练使用linux命令真的太重要啦，尤其是最近在折腾NAS，需要使用各种命令进行相关操作。经常发生的情况是用过某个命令，完了给忘了，用到了又要搜索😂，而且搜到的又不一定是合适的，所以有必要记录一波常用的linux相关命令以及折腾的过程中遇到的一些坑。</p>
+</blockquote>
+<h2 id="登录linux"><a href="#登录linux" class="headerlink" title="登录linux"></a>登录linux</h2><p>　　登录命令  <code>ssh user@ip</code> ，登录过程中可能会出现下面错误：<code>Unable to negotiate with 192.168.1.1 port 22: no matching host key type found. Their offer: ssh-dss</code> ，遇到这种情况是在折腾NAS的时候终端登录之后用 reboot 重启了NAS，结果重新登录出错无法登录，搜索到两个网页：</p>
+<ul>
+<li><a href="http://www.openssh.com/legacy.html" target="_blank" rel="external">方法一（未解决问题）</a>:<code>ssh -oHostKeyAlgorithms=+ssh-dss user@ip</code></li>
+</ul>
+<div align="center"><img src="http://wx2.sinaimg.cn/mw1024/006nQcI4gy1ffuaxi2qiyj31kw0bx41q.jpg" alt="图"></div>
+
+<p>这个解决办法并没有实际解决（不知道是不是系统影响）。</p>
+<ul>
+<li><a href="https://askubuntu.com/questions/836048/ssh-returns-no-matching-host-key-type-found-their-offer-ssh-dss" target="_blank" rel="external">方法二（解决问题）</a>： <code>ssh -o KexAlgorithms=diffie-hellman-group14-sha1 -oHostKeyAlgorithms=+ssh-dss user@ip</code></li>
+</ul>
+<div align="center"><img src="http://wx4.sinaimg.cn/mw1024/006nQcI4gy1ffuaxihxm0j312i0noafh.jpg" alt="图"></div>
+
+<h2 id="查看Linux版本等信息"><a href="#查看Linux版本等信息" class="headerlink" title="查看Linux版本等信息"></a>查看Linux版本等信息</h2><p><strong>以下测试系统版本为 CentOS 7、RedHat6.3</strong></p>
+<ul>
+<li>1、<code>uname -a</code> 查看当前操作系统内核信息</li>
+</ul>
+<p><code>Linux CentOS7 3.10.0-514.16.1.el7.x86_64 #1 SMP Wed Apr 12 15:04:24 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux</code> </p>
+<ul>
+<li>2、<code>cat /proc/version</code> 查看当前系统版本信息</li>
+</ul>
+<p><code>Linux version 3.10.0-514.16.1.el7.x86_64 (builder@kbuilder.dev.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-11) (GCC) ) #1 SMP Wed Apr 12 15:04:24 UTC 2017</code></p>
+<ul>
+<li>3、 <code>getconf LONG_BIT</code> 查看cpu运行在32bit or 64bit 模式</li>
+<li>4、<code>cat /etc/issue</code>  查看系统发行版本信息(centos 无效)</li>
+</ul>
+<p><code>Red Hat Enterprise Linux Server release 6.3 (Santiago)</code></p>
+<p>　　linux版本众多未一一测试，上面列出命令可以完成大部分情况下的需求。</p>
+
+                
+            
+        
+        </div>
+        
+    </article>
+    
+
+    
+        
+    <article class="post">
+        <header class="post-header">
+            <div class="post-time syuanpi riseIn-light back-1">
+                <span>2017年5月17日</span>
+            </div>
+            <h1 class="post-title syuanpi riseIn-light back-2">
+            
+                <a href="/2017/05/17/start-blog/">开始博客记录</a>
+            
+            </h1>
+            
+        </header>
+        <div class="post-content syuanpi riseIn-light back-3">
+            
+                
+                    <blockquote>
+<p>正式开始第一篇？仔细想想还有点小激动呢  :)</p>
+</blockquote>
+<h2 id="博客"><a href="#博客" class="headerlink" title="博客"></a>博客</h2><blockquote>
+<p><a href="http://baike.baidu.com/item/%E5%8D%9A%E5%AE%A2/124" target="_blank" rel="external">博客</a>，仅音译，英文名为<a href="http://baike.baidu.com/item/Blogger" target="_blank" rel="external">Blogger</a>,为Web Log的混成词。它的正式名称为网络日记；又<a href="http://baike.baidu.com/item/%E9%9F%B3%E8%AF%91" target="_blank" rel="external">音译</a>为<a href="http://baike.baidu.com/item/%E9%83%A8%E8%90%BD%E6%A0%BC" target="_blank" rel="external">部落格</a>或部落阁等，是一种通常由个人管理、不定期<a href="http://baike.baidu.com/item/%E5%BC%A0%E8%B4%B4" target="_blank" rel="external">张贴</a>新的文章的网站。</p>
+</blockquote>
+<p>　　博客网站真的是多如牛毛，程序员常用的博客有博客园和CSDN，但是对于我这种强迫症来说，很难去选择一个地方写博客，我能想到选个网站写博客之后过不了多久就会因为账号设置、网站设置之类的犯强迫症，浪费更多的时间在无用的折腾上面。（其实主要的原因还是因为懒得写😂😂 （逃））</p>
+<p>　　有史以来写作之类的真的是让人头疼，打小开始写作文的时候就是靠抄作文书度过来的想想也是够拼，好不容易坚持到不念书了发现有时候还得写东西，真的是让人头疼啊（这是病，得治！），所以药不能停。</p>
+<p>　　既然有了写作的这个需求，舍友聂逗比前段时间搭了个<a href="https://niejunhao.github.io/" target="_blank" rel="external">博客</a>之后<strong><em>又双叒叕</em></strong>来安利我，so前几天抽了一点时间自己折腾搭博客开始写（zhuang）文（bi）。</p>
+<h2 id="MarkDown"><a href="#MarkDown" class="headerlink" title="MarkDown"></a>MarkDown</h2><blockquote>
+<p>认识与入门MarkDown：Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。</p>
+</blockquote>
+<p>　　去年大概是十一月份的时候，工作任务少有比较多的闲余时间，随便逛网站的时候无意中发现 <strong><em>MarkDown</em></strong>这个东西，当时就被它神奇的地方吸引了（过太久没用这货，我也忘了当初是哪一点吸引了我）写了几个小内容练了下手，现在开始写博客又要重新捡起来了。</p>
+<p>　　附一张当初写的内容截图:</p>
+<div align="center"><img src="http://wx4.sinaimg.cn/mw690/006nQcI4gy1ffpgo47nlcj30ym1jqk1t.jpg" alt="图"><br><br></div>
+
+<p>　　就这样开始咯：）</p>
+
+                
+            
+        
+        </div>
+        
+    </article>
+    
+
+    
+        
+    <article class="post">
+        <header class="post-header">
+            <div class="post-time syuanpi riseIn-light back-1">
+                <span>2017年5月14日</span>
+            </div>
+            <h1 class="post-title syuanpi riseIn-light back-2">
+            
+                <a href="/2017/05/14/hello-world/">Hello World</a>
+            
+            </h1>
+            
+        </header>
+        <div class="post-content syuanpi riseIn-light back-3">
+            
+                
+                    <p>哈哈，我今天终于把博客搭建起来了！</p>
+
+                
+            
+        
+        </div>
+        
+    </article>
+    
+
+    
+</section>
+    
+    <nav class="pagination">
+        <span class="page-number current">1</span>
+    </nav>
+
+
+        </main>
+        <footer class="footer syuanpi fadeIn" id="footer">
+    <hr>
+    <div class="footer-wrapper">
+        <div class="left">
+            <div class="contact-icon">
+    
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        
+            <a href="https://twitter.com/desirelzh" class="iconfont icon-twitter" title="twitter"></a>
+        
+        
+        
+        
+        
+    
+        
+        
+            <a href="https://weibo.com/lzhho" class="iconfont icon-weibo" title="weibo"></a>
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+            <a href="https://www.zhihu.com/people/luzhihaozh" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+        
+        
+        
+    
+        
+            <a href="https://github.com/DesireL" class="iconfont icon-github" title="github"></a>
+        
+        
+        
+        
+        
+        
+        
+    
+</div>
+        </div>
+        <div class="right">
+            <div class="copyright">
+    <div class="info">
+        <span>&copy;</span>
+        <span>2017 ~ 2017</span>
+        <span>❤</span>
+        <span>luzhihao</span>
+    </div>
+    <div class="theme">
+        <span>
+            Powered By
+            <a href="http://hexo.io/" target="_blank">Hexo </a>
+        </span>
+        <span>
+            主题
+            <a href="https://github.com/ColMugX/hexo-theme-Nlvi"> Nlvi </a>
+        </span>
+    </div>
+    
+    <div class="visit_count">
+        <i class="iconfont icon-visit"></i>
+	<span id="busuanzi_value_site_pv"></span>
+	<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <i class="iconfont icon-people"></i>
+	<span id="busuanzi_value_site_uv"></span>
+    </div>
+    
+</div>
+
+        </div>
+	<div class="footer_music">
+	    
+ 	 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=3932159&auto=0&height=66"></iframe>
+
+
+	</div>
+    </div>
+</footer>
+
+    </div>
+    <script src="/script/nlvi.js"></script>
+
+    <script src="/lightbox/js/lightbox.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    document.body.addEventListener('touchstart', function () {});
+    $('.progress').hide();
+    $('.body').show();
+    Nlvi.tagcloud();
+    Nlvi.back2top();
+    Nlvi.showToc();
+    Nlvi.showComments();
+    Nlvi.showReward()
+
+    !CONFIG.animate && Nlvi.offAnimate();
+    CONFIG.lightbox && Nlvi.onPicBox();
+})
+</script>
+    </div>
+    
+    <div class="backtop syuanpi dead toTop" id="backtop">
+    <i class="iconfont icon-up"></i>
+    <span style="text-align:center;font-family:Georgia;"><span style="font-family:Georgia;" id="scrollpercent">1</span>%</span>
+</div>
+</body>
+</html>

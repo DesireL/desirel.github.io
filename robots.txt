@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /tags/
+Allow: /about/
+
+Disallow: /vendors/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /style/
+Disallow: /scripts/
+
+Sitemap: http://luzhihao.me/sitemapxml
+Sitemap: http://luzhihao.me/baidusitemao.xml

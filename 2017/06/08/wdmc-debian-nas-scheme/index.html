@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title> WDMC刷纯净Debian实现NAS方案 · 欲往之城 </title>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<link rel="stylesheet" href="/style/style.css">
+<script src="/script/jquery.min.js"></script>
+<script>
+    var CONFIG = {
+        title: "欲往之城",
+        author: "luzhihao",
+        lightbox: true,
+        animate: true
+    }
+</script>
+
+
+
+    <link rel="stylesheet" href="/lightbox/css/lightbox.min.css">
+
+
+
+
+    <link rel="stylesheet" href="/syuanpi/syuanpi.min.css">
+
+
+
+
+    <link rel="icon" href="http://tva3.sinaimg.cn/crop.0.0.640.640.180/006nQcI4jw8f1sogqbq59j30hs0hsjs8.jpg">
+
+
+
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    	ga('create', 'UA-99269469-1', 'auto');
+    	ga('send', 'pageview');
+    </script>
+
+
+
+    <script type="text/javascript">
+    	var _hmt = _hmt || [];
+    	(function() {
+      	    var hm = document.createElement("script");
+      	    hm.src = "https://hm.baidu.com/hm.js?09c10f331fa642a7db547481ad945d17";
+      	    var s = document.getElementsByTagName("script")[0];
+      	    s.parentNode.insertBefore(hm, s);
+    	})();
+    </script>
+
+
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    <script>
+        (function(){
+    	    var bp = document.createElement('script');
+      	    var curProtocol = window.location.protocol.split(':')[0];
+      	    if (curProtocol === 'https') {
+      	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+      	    }
+      	    else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+     	    }
+      	    var s = document.getElementsByTagName("script")[0];
+      	    s.parentNode.insertBefore(bp, s);
+    	})();
+    </script>
+
+
+
+</head>
+<body>
+    <div class="progress">
+    <div class="progress-inner"></div>
+</div>
+    <div class="body">
+    <div class="tagcloud" id="tagcloud">
+    <div class="tagcloud-inner">
+        <a href="/tags/Others/" style="font-size: 14px;">Others</a> <a href="/tags/debian/" style="font-size: 14px;">debian</a> <a href="/tags/linux/" style="font-size: 14px;">linux</a> <a href="/tags/nas/" style="font-size: 14px;">nas</a> <a href="/tags/openmediavault/" style="font-size: 14px;">openmediavault</a> <a href="/tags/开发/" style="font-size: 14px;">开发</a> <a href="/tags/随笔/" style="font-size: 14px;">随笔</a>
+    </div>
+</div>
+    <header class="header" id="header">
+    <div class="title syuanpi tvIn">
+    <div class="table">
+        <div class="connect">
+            <div class="connect-inner">
+                <span><a href="/">欲往之城</a></span>
+                
+                    <span id="subtitle">填坑造bug</span>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <nav class="main-nav syuanpi tvIn">
+<div class="table">
+
+    <ul class="menu">
+        
+        
+            <li class="menu-item">
+                <a href="/">
+                    <span>文章</span>
+                    
+                        <span class="menu-item-label">article</span>
+                    
+                </a>
+            </li>
+        
+        
+        
+            <li class="menu-item">
+                <a href="/archives">
+                    <span>归档</span>
+                    
+                        <span class="menu-item-label">archives</span>
+                    
+                </a>
+            </li>
+        
+        
+        
+            <li class="menu-item">
+                <a href="javascript:;" id="tags">
+                    <span>标签</span>
+                    
+                        <span class="menu-item-label">tags</span>
+                    
+                </a>
+            </li>
+        
+        
+        
+            <li class="menu-item">
+                <a href="/about">
+                    <span>关于</span>
+                    
+                        <span class="menu-item-label">about</span>
+                    
+                </a>
+            </li>
+        
+        
+    </ul>
+
+</div>
+</nav>
+<div class="mobile-nav"></div>
+</header>
+    <div class="container">
+        <main class="main" id="main">
+            
+    
+    <article class="post">
+        <header class="post-header">
+            <div class="post-time syuanpi riseIn-light back-1">
+                <span>2017年6月8日</span>
+            </div>
+            <h1 class="post-title syuanpi riseIn-light back-2">
+            
+                WDMC刷纯净Debian实现NAS方案
+            
+            </h1>
+            
+                
+                    <div class="post-tags syuanpi riseIn-light back-3">
+                    
+                        <a href="/tags/nas/">nas</a>
+                    
+                        <a href="/tags/debian/">debian</a>
+                    
+                    </div>
+                
+            
+        </header>
+        <div class="post-content syuanpi riseIn-light back-3">
+            
+                <h1 id="WDMC刷Debian-NAS-方案"><a href="#WDMC刷Debian-NAS-方案" class="headerlink" title="WDMC刷Debian NAS 方案"></a>WDMC刷Debian NAS 方案</h1><p>　　基础平台为 Debian</p>
+<h3 id="计划方案"><a href="#计划方案" class="headerlink" title="计划方案"></a>计划方案</h3><p>　　共享使用Samba</p>
+<p>　　文件管理使用芒果云</p>
+<p>　　Resilio Sync 开启文件同步</p>
+<p>　　下载使用迅雷远程下载 + Aria2（可选）</p>
+<p>　　电影播放使用Plex</p>
+<p>　　搭建OwnCloud使用私人云</p>
+<p>　　内网穿透通过路由器来搞</p>
+<p>　　Mac TimeMachine 使用netatalk搭建</p>
+<h3 id="实际情况"><a href="#实际情况" class="headerlink" title="实际情况"></a>实际情况</h3><p>　　Samba可以完美搭建，速度30-50甚至可以更高</p>
+<p>　　芒果云完美搭建</p>
+<p>　　Resilio Sync、迅雷、Aria2未安装使用（两者理论上都可以完美实现）</p>
+<p>　　Plex、OwnCloud未搭建，plex有安装包直接安装理论比较方便，OwnCloud稍微复杂一点，理论上是可行的</p>
+<p>　　最重要的实现Mac TimeMachine 搭建好之后Mac无法连接，此方案pass掉　　</p>
+<h3 id="最终解决办法"><a href="#最终解决办法" class="headerlink" title="最终解决办法"></a>最终解决办法</h3><p>　　刷回西数固件，破解之后安装Aria2（视情况而定）、迅雷、Plex、BTSync。</p>
+<p>　　好了，此文已完成，开始刷回原厂固件。。。</p>
+<p>　　我选择狗带🐶😳。。。</p>
+<p><dvi align="center"><img src="http://wx1.sinaimg.cn/mw1024/006nQcI4ly1fge6nwgdazj3062062mxe.jpg" alt="狗带"></dvi></p>
+<p>　　PS：如有需要教程可留言</p>
+
+            
+        
+        </div>
+        
+            
+            
+        
+    </article>
+    
+        
+    <nav class="article-page">
+        
+        
+            <a href="/2017/06/05/nas-openmediavault-install/" id="art-right" class="art-left">
+                <span class="prev-title"> 
+                    <i class="iconfont icon-left"></i>NAS折腾-安装Debian+OpenMediaVault
+                </span>
+            </a>
+        
+    </nav>
+
+        
+    <i id="com-switch" class="iconfont icon-more syuanpi jumping-in long infinite" style="font-size:24px;display:block;text-align:center;"></i>
+    <div class="post-comments" id="post-comments" style="display: none;margin: auto 16px;">
+        
+        
+        
+    <div class="cloud-tie-wrapper" id="cloud-tie-wrapper"></div>
+    <script>
+      var cloudTieConfig = {
+          url: document.location.href,
+          sourceId: "",
+          productKey: "d133eb1cc9814e418664e0ecd8aa2448",
+          target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+
+        <!-- Disqus Comments -->
+
+
+    </div>
+
+    
+
+
+        </main>
+        <footer class="footer syuanpi fadeIn" id="footer">
+    <hr>
+    <div class="footer-wrapper">
+        <div class="left">
+            <div class="contact-icon">
+    
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        
+            <a href="https://twitter.com/desirelzh" class="iconfont icon-twitter" title="twitter"></a>
+        
+        
+        
+        
+        
+    
+        
+        
+            <a href="https://weibo.com/lzhho" class="iconfont icon-weibo" title="weibo"></a>
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+            <a href="https://www.zhihu.com/people/luzhihaozh" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+        
+        
+        
+    
+        
+            <a href="https://github.com/DesireL" class="iconfont icon-github" title="github"></a>
+        
+        
+        
+        
+        
+        
+        
+    
+</div>
+        </div>
+        <div class="right">
+            <div class="copyright">
+    <div class="info">
+        <span>&copy;</span>
+        <span>2017 ~ 2017</span>
+        <span>❤</span>
+        <span>luzhihao</span>
+    </div>
+    <div class="theme">
+        <span>
+            Powered By
+            <a href="http://hexo.io/" target="_blank">Hexo </a>
+        </span>
+        <span>
+            主题
+            <a href="https://github.com/ColMugX/hexo-theme-Nlvi"> Nlvi </a>
+        </span>
+    </div>
+    
+    <div class="visit_count">
+        <i class="iconfont icon-visit"></i>
+	<span id="busuanzi_value_site_pv"></span>
+	<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <i class="iconfont icon-people"></i>
+	<span id="busuanzi_value_site_uv"></span>
+    </div>
+    
+</div>
+
+        </div>
+	<div class="footer_music">
+	    
+ 	 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=3932159&auto=0&height=66"></iframe>
+
+
+	</div>
+    </div>
+</footer>
+
+    </div>
+    <script src="/script/nlvi.js"></script>
+
+    <script src="/lightbox/js/lightbox.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    document.body.addEventListener('touchstart', function () {});
+    $('.progress').hide();
+    $('.body').show();
+    Nlvi.tagcloud();
+    Nlvi.back2top();
+    Nlvi.showToc();
+    Nlvi.showComments();
+    Nlvi.showReward()
+
+    !CONFIG.animate && Nlvi.offAnimate();
+    CONFIG.lightbox && Nlvi.onPicBox();
+})
+</script>
+    </div>
+    
+        
+    <div class="post-toc">
+        <span class="title">文章目录</span>
+        <div class="toc-inner syuanpi back-1 fallIn-light">
+            <li class="title-link"><a href="javascript:;" class="toTop">WDMC刷纯净Debian实现NAS方案</a></li>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#WDMC刷Debian-NAS-方案"><span class="toc-text">WDMC刷Debian NAS 方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#计划方案"><span class="toc-text">计划方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实际情况"><span class="toc-text">实际情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最终解决办法"><span class="toc-text">最终解决办法</span></a></li></ol></li></ol></li></ol>
+        </div>
+    </div>
+
+    
+    <div class="backtop syuanpi dead toTop" id="backtop">
+    <i class="iconfont icon-up"></i>
+    <span style="text-align:center;font-family:Georgia;"><span style="font-family:Georgia;" id="scrollpercent">1</span>%</span>
+</div>
+</body>
+</html>

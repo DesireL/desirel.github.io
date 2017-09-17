@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title> Linux命令（一） · 欲往之城 </title>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<link rel="stylesheet" href="/style/style.css">
+<script src="/script/jquery.min.js"></script>
+<script>
+    var CONFIG = {
+        title: "欲往之城",
+        author: "luzhihao",
+        lightbox: true,
+        animate: true
+    }
+</script>
+
+
+
+    <link rel="stylesheet" href="/lightbox/css/lightbox.min.css">
+
+
+
+
+    <link rel="stylesheet" href="/syuanpi/syuanpi.min.css">
+
+
+
+
+    <link rel="icon" href="http://tva3.sinaimg.cn/crop.0.0.640.640.180/006nQcI4jw8f1sogqbq59j30hs0hsjs8.jpg">
+
+
+
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    	ga('create', 'UA-99269469-1', 'auto');
+    	ga('send', 'pageview');
+    </script>
+
+
+
+    <script type="text/javascript">
+    	var _hmt = _hmt || [];
+    	(function() {
+      	    var hm = document.createElement("script");
+      	    hm.src = "https://hm.baidu.com/hm.js?09c10f331fa642a7db547481ad945d17";
+      	    var s = document.getElementsByTagName("script")[0];
+      	    s.parentNode.insertBefore(hm, s);
+    	})();
+    </script>
+
+
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    <script>
+        (function(){
+    	    var bp = document.createElement('script');
+      	    var curProtocol = window.location.protocol.split(':')[0];
+      	    if (curProtocol === 'https') {
+      	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+      	    }
+      	    else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+     	    }
+      	    var s = document.getElementsByTagName("script")[0];
+      	    s.parentNode.insertBefore(bp, s);
+    	})();
+    </script>
+
+
+
+</head>
+<body>
+    <div class="progress">
+    <div class="progress-inner"></div>
+</div>
+    <div class="body">
+    <div class="tagcloud" id="tagcloud">
+    <div class="tagcloud-inner">
+        <a href="/tags/Others/" style="font-size: 14px;">Others</a> <a href="/tags/debian/" style="font-size: 14px;">debian</a> <a href="/tags/linux/" style="font-size: 14px;">linux</a> <a href="/tags/nas/" style="font-size: 14px;">nas</a> <a href="/tags/openmediavault/" style="font-size: 14px;">openmediavault</a> <a href="/tags/开发/" style="font-size: 14px;">开发</a> <a href="/tags/随笔/" style="font-size: 14px;">随笔</a>
+    </div>
+</div>
+    <header class="header" id="header">
+    <div class="title syuanpi tvIn">
+    <div class="table">
+        <div class="connect">
+            <div class="connect-inner">
+                <span><a href="/">欲往之城</a></span>
+                
+                    <span id="subtitle">填坑造bug</span>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <nav class="main-nav syuanpi tvIn">
+<div class="table">
+
+    <ul class="menu">
+        
+        
+            <li class="menu-item">
+                <a href="/">
+                    <span>文章</span>
+                    
+                        <span class="menu-item-label">article</span>
+                    
+                </a>
+            </li>
+        
+        
+        
+            <li class="menu-item">
+                <a href="/archives">
+                    <span>归档</span>
+                    
+                        <span class="menu-item-label">archives</span>
+                    
+                </a>
+            </li>
+        
+        
+        
+            <li class="menu-item">
+                <a href="javascript:;" id="tags">
+                    <span>标签</span>
+                    
+                        <span class="menu-item-label">tags</span>
+                    
+                </a>
+            </li>
+        
+        
+        
+            <li class="menu-item">
+                <a href="/about">
+                    <span>关于</span>
+                    
+                        <span class="menu-item-label">about</span>
+                    
+                </a>
+            </li>
+        
+        
+    </ul>
+
+</div>
+</nav>
+<div class="mobile-nav"></div>
+</header>
+    <div class="container">
+        <main class="main" id="main">
+            
+    
+    <article class="post">
+        <header class="post-header">
+            <div class="post-time syuanpi riseIn-light back-1">
+                <span>2017年5月22日</span>
+            </div>
+            <h1 class="post-title syuanpi riseIn-light back-2">
+            
+                Linux命令（一）
+            
+            </h1>
+            
+                
+                    <div class="post-tags syuanpi riseIn-light back-3">
+                    
+                        <a href="/tags/linux/">linux</a>
+                    
+                        <a href="/tags/开发/">开发</a>
+                    
+                    </div>
+                
+            
+        </header>
+        <div class="post-content syuanpi riseIn-light back-3">
+            
+                <blockquote>
+<p>作为一个猿类，熟练使用linux命令真的太重要啦，尤其是最近在折腾NAS，需要使用各种命令进行相关操作。经常发生的情况是用过某个命令，完了给忘了，用到了又要搜索😂，而且搜到的又不一定是合适的，所以有必要记录一波常用的linux相关命令以及折腾的过程中遇到的一些坑。</p>
+</blockquote>
+<h2 id="登录linux"><a href="#登录linux" class="headerlink" title="登录linux"></a>登录linux</h2><p>　　登录命令  <code>ssh user@ip</code> ，登录过程中可能会出现下面错误：<code>Unable to negotiate with 192.168.1.1 port 22: no matching host key type found. Their offer: ssh-dss</code> ，遇到这种情况是在折腾NAS的时候终端登录之后用 reboot 重启了NAS，结果重新登录出错无法登录，搜索到两个网页：</p>
+<ul>
+<li><a href="http://www.openssh.com/legacy.html" target="_blank" rel="external">方法一（未解决问题）</a>:<code>ssh -oHostKeyAlgorithms=+ssh-dss user@ip</code></li>
+</ul>
+<div align="center"><img src="http://wx2.sinaimg.cn/mw1024/006nQcI4gy1ffuaxi2qiyj31kw0bx41q.jpg" alt="图"></div>
+
+<p>这个解决办法并没有实际解决（不知道是不是系统影响）。</p>
+<ul>
+<li><a href="https://askubuntu.com/questions/836048/ssh-returns-no-matching-host-key-type-found-their-offer-ssh-dss" target="_blank" rel="external">方法二（解决问题）</a>： <code>ssh -o KexAlgorithms=diffie-hellman-group14-sha1 -oHostKeyAlgorithms=+ssh-dss user@ip</code></li>
+</ul>
+<div align="center"><img src="http://wx4.sinaimg.cn/mw1024/006nQcI4gy1ffuaxihxm0j312i0noafh.jpg" alt="图"></div>
+
+<h2 id="查看Linux版本等信息"><a href="#查看Linux版本等信息" class="headerlink" title="查看Linux版本等信息"></a>查看Linux版本等信息</h2><p><strong>以下测试系统版本为 CentOS 7、RedHat6.3</strong></p>
+<ul>
+<li>1、<code>uname -a</code> 查看当前操作系统内核信息</li>
+</ul>
+<p><code>Linux CentOS7 3.10.0-514.16.1.el7.x86_64 #1 SMP Wed Apr 12 15:04:24 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux</code> </p>
+<ul>
+<li>2、<code>cat /proc/version</code> 查看当前系统版本信息</li>
+</ul>
+<p><code>Linux version 3.10.0-514.16.1.el7.x86_64 (builder@kbuilder.dev.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-11) (GCC) ) #1 SMP Wed Apr 12 15:04:24 UTC 2017</code></p>
+<ul>
+<li>3、 <code>getconf LONG_BIT</code> 查看cpu运行在32bit or 64bit 模式</li>
+<li>4、<code>cat /etc/issue</code>  查看系统发行版本信息(centos 无效)</li>
+</ul>
+<p><code>Red Hat Enterprise Linux Server release 6.3 (Santiago)</code></p>
+<p>　　linux版本众多未一一测试，上面列出命令可以完成大部分情况下的需求。</p>
+
+            
+        
+        </div>
+        
+            
+            
+        
+    </article>
+    
+        
+    <nav class="article-page">
+        
+            <a href="/2017/06/05/nas-openmediavault-install/" id="art-left" class="art-right">
+                <span class="next-title">
+                    NAS折腾-安装Debian+OpenMediaVault<i class="iconfont icon-right"></i> 
+                </span>
+            </a>
+        
+        
+            <a href="/2017/05/17/start-blog/" id="art-right" class="art-left">
+                <span class="prev-title"> 
+                    <i class="iconfont icon-left"></i>开始博客记录
+                </span>
+            </a>
+        
+    </nav>
+
+        
+    <i id="com-switch" class="iconfont icon-more syuanpi jumping-in long infinite" style="font-size:24px;display:block;text-align:center;"></i>
+    <div class="post-comments" id="post-comments" style="display: none;margin: auto 16px;">
+        
+        
+        
+    <div class="cloud-tie-wrapper" id="cloud-tie-wrapper"></div>
+    <script>
+      var cloudTieConfig = {
+          url: document.location.href,
+          sourceId: "",
+          productKey: "d133eb1cc9814e418664e0ecd8aa2448",
+          target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+
+        <!-- Disqus Comments -->
+
+
+    </div>
+
+    
+
+
+        </main>
+        <footer class="footer syuanpi fadeIn" id="footer">
+    <hr>
+    <div class="footer-wrapper">
+        <div class="left">
+            <div class="contact-icon">
+    
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        
+            <a href="https://twitter.com/desirelzh" class="iconfont icon-twitter" title="twitter"></a>
+        
+        
+        
+        
+        
+    
+        
+        
+            <a href="https://weibo.com/lzhho" class="iconfont icon-weibo" title="weibo"></a>
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+            <a href="https://www.zhihu.com/people/luzhihaozh" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+        
+        
+        
+    
+        
+            <a href="https://github.com/DesireL" class="iconfont icon-github" title="github"></a>
+        
+        
+        
+        
+        
+        
+        
+    
+</div>
+        </div>
+        <div class="right">
+            <div class="copyright">
+    <div class="info">
+        <span>&copy;</span>
+        <span>2017 ~ 2017</span>
+        <span>❤</span>
+        <span>luzhihao</span>
+    </div>
+    <div class="theme">
+        <span>
+            Powered By
+            <a href="http://hexo.io/" target="_blank">Hexo </a>
+        </span>
+        <span>
+            主题
+            <a href="https://github.com/ColMugX/hexo-theme-Nlvi"> Nlvi </a>
+        </span>
+    </div>
+    
+    <div class="visit_count">
+        <i class="iconfont icon-visit"></i>
+	<span id="busuanzi_value_site_pv"></span>
+	<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <i class="iconfont icon-people"></i>
+	<span id="busuanzi_value_site_uv"></span>
+    </div>
+    
+</div>
+
+        </div>
+	<div class="footer_music">
+	    
+ 	 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=3932159&auto=0&height=66"></iframe>
+
+
+	</div>
+    </div>
+</footer>
+
+    </div>
+    <script src="/script/nlvi.js"></script>
+
+    <script src="/lightbox/js/lightbox.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    document.body.addEventListener('touchstart', function () {});
+    $('.progress').hide();
+    $('.body').show();
+    Nlvi.tagcloud();
+    Nlvi.back2top();
+    Nlvi.showToc();
+    Nlvi.showComments();
+    Nlvi.showReward()
+
+    !CONFIG.animate && Nlvi.offAnimate();
+    CONFIG.lightbox && Nlvi.onPicBox();
+})
+</script>
+    </div>
+    
+        
+    <div class="post-toc">
+        <span class="title">文章目录</span>
+        <div class="toc-inner syuanpi back-1 fallIn-light">
+            <li class="title-link"><a href="javascript:;" class="toTop">Linux命令（一）</a></li>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#登录linux"><span class="toc-text">登录linux</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看Linux版本等信息"><span class="toc-text">查看Linux版本等信息</span></a></li></ol>
+        </div>
+    </div>
+
+    
+    <div class="backtop syuanpi dead toTop" id="backtop">
+    <i class="iconfont icon-up"></i>
+    <span style="text-align:center;font-family:Georgia;"><span style="font-family:Georgia;" id="scrollpercent">1</span>%</span>
+</div>
+</body>
+</html>

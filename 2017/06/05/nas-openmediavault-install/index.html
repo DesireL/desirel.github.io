@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title> NAS折腾-安装Debian+OpenMediaVault · 欲往之城 </title>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<link rel="stylesheet" href="/style/style.css">
+<script src="/script/jquery.min.js"></script>
+<script>
+    var CONFIG = {
+        title: "欲往之城",
+        author: "luzhihao",
+        lightbox: true,
+        animate: true
+    }
+</script>
+
+
+
+    <link rel="stylesheet" href="/lightbox/css/lightbox.min.css">
+
+
+
+
+    <link rel="stylesheet" href="/syuanpi/syuanpi.min.css">
+
+
+
+
+    <link rel="icon" href="http://tva3.sinaimg.cn/crop.0.0.640.640.180/006nQcI4jw8f1sogqbq59j30hs0hsjs8.jpg">
+
+
+
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    	ga('create', 'UA-99269469-1', 'auto');
+    	ga('send', 'pageview');
+    </script>
+
+
+
+    <script type="text/javascript">
+    	var _hmt = _hmt || [];
+    	(function() {
+      	    var hm = document.createElement("script");
+      	    hm.src = "https://hm.baidu.com/hm.js?09c10f331fa642a7db547481ad945d17";
+      	    var s = document.getElementsByTagName("script")[0];
+      	    s.parentNode.insertBefore(hm, s);
+    	})();
+    </script>
+
+
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    <script>
+        (function(){
+    	    var bp = document.createElement('script');
+      	    var curProtocol = window.location.protocol.split(':')[0];
+      	    if (curProtocol === 'https') {
+      	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+      	    }
+      	    else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+     	    }
+      	    var s = document.getElementsByTagName("script")[0];
+      	    s.parentNode.insertBefore(bp, s);
+    	})();
+    </script>
+
+
+
+</head>
+<body>
+    <div class="progress">
+    <div class="progress-inner"></div>
+</div>
+    <div class="body">
+    <div class="tagcloud" id="tagcloud">
+    <div class="tagcloud-inner">
+        <a href="/tags/Others/" style="font-size: 14px;">Others</a> <a href="/tags/debian/" style="font-size: 14px;">debian</a> <a href="/tags/linux/" style="font-size: 14px;">linux</a> <a href="/tags/nas/" style="font-size: 14px;">nas</a> <a href="/tags/openmediavault/" style="font-size: 14px;">openmediavault</a> <a href="/tags/开发/" style="font-size: 14px;">开发</a> <a href="/tags/随笔/" style="font-size: 14px;">随笔</a>
+    </div>
+</div>
+    <header class="header" id="header">
+    <div class="title syuanpi tvIn">
+    <div class="table">
+        <div class="connect">
+            <div class="connect-inner">
+                <span><a href="/">欲往之城</a></span>
+                
+                    <span id="subtitle">填坑造bug</span>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <nav class="main-nav syuanpi tvIn">
+<div class="table">
+
+    <ul class="menu">
+        
+        
+            <li class="menu-item">
+                <a href="/">
+                    <span>文章</span>
+                    
+                        <span class="menu-item-label">article</span>
+                    
+                </a>
+            </li>
+        
+        
+        
+            <li class="menu-item">
+                <a href="/archives">
+                    <span>归档</span>
+                    
+                        <span class="menu-item-label">archives</span>
+                    
+                </a>
+            </li>
+        
+        
+        
+            <li class="menu-item">
+                <a href="javascript:;" id="tags">
+                    <span>标签</span>
+                    
+                        <span class="menu-item-label">tags</span>
+                    
+                </a>
+            </li>
+        
+        
+        
+            <li class="menu-item">
+                <a href="/about">
+                    <span>关于</span>
+                    
+                        <span class="menu-item-label">about</span>
+                    
+                </a>
+            </li>
+        
+        
+    </ul>
+
+</div>
+</nav>
+<div class="mobile-nav"></div>
+</header>
+    <div class="container">
+        <main class="main" id="main">
+            
+    
+    <article class="post">
+        <header class="post-header">
+            <div class="post-time syuanpi riseIn-light back-1">
+                <span>2017年6月5日</span>
+            </div>
+            <h1 class="post-title syuanpi riseIn-light back-2">
+            
+                NAS折腾-安装Debian+OpenMediaVault
+            
+            </h1>
+            
+                
+                    <div class="post-tags syuanpi riseIn-light back-3">
+                    
+                        <a href="/tags/linux/">linux</a>
+                    
+                        <a href="/tags/nas/">nas</a>
+                    
+                        <a href="/tags/openmediavault/">openmediavault</a>
+                    
+                    </div>
+                
+            
+        </header>
+        <div class="post-content syuanpi riseIn-light back-3">
+            
+                <h1 id="NAS折腾记录-WD-Mycloud刷纯净版Debian安装OpenMediaVault"><a href="#NAS折腾记录-WD-Mycloud刷纯净版Debian安装OpenMediaVault" class="headerlink" title="NAS折腾记录-WD Mycloud刷纯净版Debian安装OpenMediaVault"></a>NAS折腾记录-WD Mycloud刷纯净版Debian安装OpenMediaVault</h1><h2 id="什么是NAS？为什么要买NAS"><a href="#什么是NAS？为什么要买NAS" class="headerlink" title="什么是NAS？为什么要买NAS?"></a>什么是NAS？为什么要买NAS?</h2><blockquote>
+<p><strong><em>NAS</em></strong> — 网络连接存储设备<strong>（</strong>N<strong>etwork </strong>A<strong>ttached </strong>S<strong>torage</strong>)，是一种专门的数据存储技术的名称，它可以直接连接在电脑网络上面，对异质网络用户提供了集中式数据访问服务。</p>
+</blockquote>
+<p>　　为什么要买NAS？      EXM？     不要问我为什么要买nas，我心口疼。。。</p>
+<div align="center"> <img src="http://wx2.sinaimg.cn/mw1024/006nQcI4ly1fge26tpkn8j30k00gvabi.jpg" alt="图"></div>
+
+<p>　　在舍友的安利下二手东入了西数的 WD MyCloud 3T版，到手用了一个月之后才有想法折腾nas。</p>
+<p>　　闲话少说，进入正题：</p>
+<p>　　逛NAS论坛破解固件，刷了Aria2（搞好了断电续传，但是重启之后下载完成的任务就会消失）、迅雷下载可以远程完美解决、Transmission（没这方面需求，所以没怎么了解，装了没用过）、miniDLNA（也没用过）、Plex（这货用起来还不错，就是有时候没字幕找字幕麻烦，有时候匹配信息不对对于有强迫症的我实在受不了一个一个去点击修改匹配信息，播放视频对于MC这种设备不太友好有时候会导致MC很卡，设置会高负荷运转）、Resilio Sync（这是个好软件，强力推荐装一个，很简单没啥可说的，附一个你看了会说卧槽的<a href="http://notepad.live/share/802e1fkeys" target="_blank" rel="external">链接 ：）</a>）。</p>
+<p>　　装了上面说的那么多插件已经可以满足正常的存储、娱乐、下载、同步需求了，那还有OMV什么事情呢？你问我呀，哦那是因为我有强迫症呀。</p>
+<p>　　虽然折腾了装好了这些插件但还是不完美，有诸多缺点，强迫症真的会受不了的😂，刚好论坛里面看到有刷纯净版Debian + <a href="http://www.openmediavault.cn/" target="_blank" rel="external">OpenMediaVault</a>，俄罗斯FOX大神也说这个很好，所以立马刷呗。</p>
+<h2 id="Debian"><a href="#Debian" class="headerlink" title="Debian"></a>Debian</h2><p>　　安装好Ddebian之后的配置问题：</p>
+<p>　　更新源debian源：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nano /etc/apt/sources.list</div></pre></td></tr></table></figure>
+<p>　　替换原有内容为下面内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">deb http://mirrors.ustc.edu.cn/debian/ jessie main contrib non-free</div><div class="line">deb-src http://mirrors.ustc.edu.cn/debian/ jessie main contrib non-free</div><div class="line">deb http://mirrors.ustc.edu.cn/debian/ jessie-updates main contrib non-free</div><div class="line">deb-src http://mirrors.ustc.edu.cn/debian/ jessie-updates main contrib non-free</div><div class="line">deb http://mirrors.ustc.edu.cn/debian/ jessie-backports main contrib non-free</div><div class="line">deb-src http://mirrors.ustc.edu.cn/debian/ jessie-backports main contrib non-free</div><div class="line">deb http://mirrors.ustc.edu.cn/debian-security/ jessie/updates main contrib non-free</div><div class="line">deb-src http://mirrors.ustc.edu.cn/debian-security/ jessie/updates main contrib non-free</div></pre></td></tr></table></figure>
+<p>　　更新：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt-get update </div><div class="line">apt-get upgrade</div></pre></td></tr></table></figure>
+<p>　　!!! 执行upgrade命令的时候会更新许多包，更新的时候可能会多次提示:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Processing triggers for man-db ...</div><div class="line">fopen: Permission denied</div></pre></td></tr></table></figure>
+<p>　　强迫症看了那真的是受不了😖，执行下面命令可以解决此问题：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chown -R man:root /var/cache/man</div></pre></td></tr></table></figure>
+<p>　　设置语言：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt-get install locales</div><div class="line">dpkg-reconfigure locales</div></pre></td></tr></table></figure>
+<p>　　同步时间、设置时区：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt-get install -y ntp</div><div class="line">cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</div></pre></td></tr></table></figure>
+<p>　　以上内容参考地址：<a href="http://www.nasyun.com/thread-29036-1-1.html" target="_blank" rel="external">将WD Mycloud Gen2改造成私人在线云播服务器</a></p>
+<h2 id="OpenMediaVault"><a href="#OpenMediaVault" class="headerlink" title="OpenMediaVault"></a>OpenMediaVault</h2><blockquote>
+<p>OpenMediaVault，是一个开源的基于Debian Linux的下一代网络附加存储(<a href="http://baike.baidu.com/item/NAS/3465615" target="_blank" rel="external">NAS</a>)解决方案。</p>
+</blockquote>
+<div align="center"><a href="http://www.openmediavault.org/" target="_blank" rel="external"><img src="http://wx4.sinaimg.cn/mw1024/006nQcI4gy1fgbngom4gej31kw0tu7q1.jpg" alt="图"></a></div>
+
+<p>　　OMV系统有挺多好处，但是由于时间原因（折腾其他NAS方案、上班、HP GEN8快到了）无法从以前逛过的网站罗列可用的功能，在此不表。</p>
+<p>　　安装Debian的时候建议分区的时候分完系统区之后单独分一个区出来存放数据，然后这个分区在系统启动的时候不要在/etc/fstab设置defaults挂载，因为如果设置该分区开机启动挂载defaults之后，进入omv添加共享文件夹是无法选择那个分区的。</p>
+<p>　　我打算安装omv的一点原因是被owncloud吸引了，但是我安装的3.x版本安装起来比较麻烦，而且共享文件夹设置之类的有问题总是报错。</p>
+<p>　　PS：本人在写完这边博文的时候，已经放弃omv了，因为西数的这款NAS是放在家里的，所以有离线下载功能下电影，晚上回家每天定时备份下Mac数据就行，所以没必要浪费很多时间去折腾omv。西数3T的新方案是：Debian+迅雷（远程下载）+Aria2（非必须）+Resilio Sync（备份下Mac上面的开发路径和其他一些重要一点的文件）+Plex（看看电影，电影尽量选择10G以下以降低硬件负荷），后续会放出此方案的关键步骤和方法。</p>
+
+            
+        
+        </div>
+        
+            
+            
+        
+    </article>
+    
+        
+    <nav class="article-page">
+        
+            <a href="/2017/06/08/wdmc-debian-nas-scheme/" id="art-left" class="art-right">
+                <span class="next-title">
+                    WDMC刷纯净Debian实现NAS方案<i class="iconfont icon-right"></i> 
+                </span>
+            </a>
+        
+        
+            <a href="/2017/05/22/linux-command-1/" id="art-right" class="art-left">
+                <span class="prev-title"> 
+                    <i class="iconfont icon-left"></i>Linux命令（一）
+                </span>
+            </a>
+        
+    </nav>
+
+        
+    <i id="com-switch" class="iconfont icon-more syuanpi jumping-in long infinite" style="font-size:24px;display:block;text-align:center;"></i>
+    <div class="post-comments" id="post-comments" style="display: none;margin: auto 16px;">
+        
+        
+        
+    <div class="cloud-tie-wrapper" id="cloud-tie-wrapper"></div>
+    <script>
+      var cloudTieConfig = {
+          url: document.location.href,
+          sourceId: "",
+          productKey: "d133eb1cc9814e418664e0ecd8aa2448",
+          target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+
+        <!-- Disqus Comments -->
+
+
+    </div>
+
+    
+
+
+        </main>
+        <footer class="footer syuanpi fadeIn" id="footer">
+    <hr>
+    <div class="footer-wrapper">
+        <div class="left">
+            <div class="contact-icon">
+    
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        
+            <a href="https://twitter.com/desirelzh" class="iconfont icon-twitter" title="twitter"></a>
+        
+        
+        
+        
+        
+    
+        
+        
+            <a href="https://weibo.com/lzhho" class="iconfont icon-weibo" title="weibo"></a>
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+            <a href="https://www.zhihu.com/people/luzhihaozh" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+        
+        
+        
+    
+        
+            <a href="https://github.com/DesireL" class="iconfont icon-github" title="github"></a>
+        
+        
+        
+        
+        
+        
+        
+    
+</div>
+        </div>
+        <div class="right">
+            <div class="copyright">
+    <div class="info">
+        <span>&copy;</span>
+        <span>2017 ~ 2017</span>
+        <span>❤</span>
+        <span>luzhihao</span>
+    </div>
+    <div class="theme">
+        <span>
+            Powered By
+            <a href="http://hexo.io/" target="_blank">Hexo </a>
+        </span>
+        <span>
+            主题
+            <a href="https://github.com/ColMugX/hexo-theme-Nlvi"> Nlvi </a>
+        </span>
+    </div>
+    
+    <div class="visit_count">
+        <i class="iconfont icon-visit"></i>
+	<span id="busuanzi_value_site_pv"></span>
+	<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <i class="iconfont icon-people"></i>
+	<span id="busuanzi_value_site_uv"></span>
+    </div>
+    
+</div>
+
+        </div>
+	<div class="footer_music">
+	    
+ 	 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=3932159&auto=0&height=66"></iframe>
+
+
+	</div>
+    </div>
+</footer>
+
+    </div>
+    <script src="/script/nlvi.js"></script>
+
+    <script src="/lightbox/js/lightbox.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    document.body.addEventListener('touchstart', function () {});
+    $('.progress').hide();
+    $('.body').show();
+    Nlvi.tagcloud();
+    Nlvi.back2top();
+    Nlvi.showToc();
+    Nlvi.showComments();
+    Nlvi.showReward()
+
+    !CONFIG.animate && Nlvi.offAnimate();
+    CONFIG.lightbox && Nlvi.onPicBox();
+})
+</script>
+    </div>
+    
+        
+    <div class="post-toc">
+        <span class="title">文章目录</span>
+        <div class="toc-inner syuanpi back-1 fallIn-light">
+            <li class="title-link"><a href="javascript:;" class="toTop">NAS折腾-安装Debian+OpenMediaVault</a></li>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#NAS折腾记录-WD-Mycloud刷纯净版Debian安装OpenMediaVault"><span class="toc-text">NAS折腾记录-WD Mycloud刷纯净版Debian安装OpenMediaVault</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是NAS？为什么要买NAS"><span class="toc-text">什么是NAS？为什么要买NAS?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Debian"><span class="toc-text">Debian</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OpenMediaVault"><span class="toc-text">OpenMediaVault</span></a></li></ol></li></ol>
+        </div>
+    </div>
+
+    
+    <div class="backtop syuanpi dead toTop" id="backtop">
+    <i class="iconfont icon-up"></i>
+    <span style="text-align:center;font-family:Georgia;"><span style="font-family:Georgia;" id="scrollpercent">1</span>%</span>
+</div>
+</body>
+</html>
