@@ -8,8 +8,22 @@
         
     </title>
     <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="browsermode" content="application">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="欲往之城">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-navbutton-color" content="#666666">
+<meta name= "format-detection" content="telephone=no" />
+<meta name="keywords" content="nlvi, Nlvi" />
+
+
+    <meta name="subtitle" content="填坑造bug">
+
+
+    <meta name="description" content="个人博客">
+
 
 
 <link rel="stylesheet" href="/style/style.css">
@@ -35,53 +49,9 @@
 
 
 
-    <link rel="icon" href="http://tva3.sinaimg.cn/crop.0.0.640.640.180/006nQcI4jw8f1sogqbq59j30hs0hsjs8.jpg">
 
 
 
-
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    	ga('create', 'UA-99269469-1', 'auto');
-    	ga('send', 'pageview');
-    </script>
-
-
-
-    <script type="text/javascript">
-    	var _hmt = _hmt || [];
-    	(function() {
-      	    var hm = document.createElement("script");
-      	    hm.src = "https://hm.baidu.com/hm.js?09c10f331fa642a7db547481ad945d17";
-      	    var s = document.getElementsByTagName("script")[0];
-      	    s.parentNode.insertBefore(hm, s);
-    	})();
-    </script>
-
-
-
-    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
-    <script>
-        (function(){
-    	    var bp = document.createElement('script');
-      	    var curProtocol = window.location.protocol.split(':')[0];
-      	    if (curProtocol === 'https') {
-      	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-      	    }
-      	    else {
-                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-     	    }
-      	    var s = document.getElementsByTagName("script")[0];
-      	    s.parentNode.insertBefore(bp, s);
-    	})();
-    </script>
 
 
 
@@ -91,7 +61,8 @@
     <div class="progress-inner"></div>
 </div>
     <div class="body">
-    <div class="tagcloud" id="tagcloud">
+    <div class="tagcloud-mask"></div>  
+<div class="tagcloud" id="tagcloud">
     <div class="tagcloud-inner">
         <a href="/tags/Others/" style="font-size: 14px;">Others</a> <a href="/tags/debian/" style="font-size: 14px;">debian</a> <a href="/tags/linux/" style="font-size: 14px;">linux</a> <a href="/tags/nas/" style="font-size: 14px;">nas</a> <a href="/tags/openmediavault/" style="font-size: 14px;">openmediavault</a> <a href="/tags/开发/" style="font-size: 14px;">开发</a> <a href="/tags/随笔/" style="font-size: 14px;">随笔</a>
     </div>
@@ -109,10 +80,21 @@
         </div>
     </div>
 </div>
+
     <nav class="main-nav syuanpi tvIn">
 <div class="table">
 
     <ul class="menu">
+        
+        <li class="menu-item">
+            <a href="javascript:;" id="search">
+                <span>搜索</span>
+                
+                    <span class="menu-item-label">search</span>
+                
+            </a>
+        </li>
+        
         
         
             <li class="menu-item">
@@ -162,16 +144,86 @@
 
 </div>
 </nav>
-<div class="mobile-nav"></div>
 </header>
+<div class="mobile-header">
+    <div class="mobile-header-body">
+        <div class="mobile-header-list">
+            
+            
+                <div class="mobile-nav-item">
+                    <a href="/">
+                        <span>文章</span>
+                        
+                            <span class="menu-item-label">article</span>
+                        
+                    </a>
+                </div>
+            
+            
+            
+                <div class="mobile-nav-item">
+                    <a href="/archives">
+                        <span>归档</span>
+                        
+                            <span class="menu-item-label">archives</span>
+                        
+                    </a>
+                </div>
+            
+            
+            
+                <div class="mobile-nav-item inner-cloud">
+                    <div class="mobile-nav-tag">
+                        <a href="javascript:;" id="mobile-tags">
+                            <span>标签</span>
+                            
+                                <span class="menu-item-label">tags</span>
+                            
+                        </a>
+                    </div>
+                    <div class="mobile-nav-tagcloud">
+                        <div class="mobile-tagcloud-inner">
+                            <a href="/tags/Others/" style="font-size: 14px;">Others</a> <a href="/tags/debian/" style="font-size: 14px;">debian</a> <a href="/tags/linux/" style="font-size: 14px;">linux</a> <a href="/tags/nas/" style="font-size: 14px;">nas</a> <a href="/tags/openmediavault/" style="font-size: 14px;">openmediavault</a> <a href="/tags/开发/" style="font-size: 14px;">开发</a> <a href="/tags/随笔/" style="font-size: 14px;">随笔</a>
+                        </div>
+                    </div>
+                </div>
+            
+            
+            
+                <div class="mobile-nav-item">
+                    <a href="/about">
+                        <span>关于</span>
+                        
+                            <span class="menu-item-label">about</span>
+                        
+                    </a>
+                </div>
+            
+            
+        </div>
+    </div>
+    <div class="mobile-header-nav">
+        <div class="mobile-header-item" id="mobile-left">
+            <div class="header-menu-item">
+                <span class="header-menu-line"></span>
+            </div>
+        </div>
+        <h1 class="mobile-header-title">
+            <a href="/">欲往之城</a>
+        </h1>
+        <div class="mobile-header-item"></div>
+    </div>
+</div>
+
     <div class="container">
         <main class="main" id="main">
             
         
             <div class="about syuanpi riseIn-light">
                 <h2 class="title"> 关于 </h2>
-                <div class="content"> （博主太懒了啥都没留下😂😂😂） </div>
+                <div class="content">  </div>
             </div>
+            
         
     
         </main>
@@ -188,59 +240,19 @@
     
     
     
-        
-        
-        
-            <a href="https://twitter.com/desirelzh" class="iconfont icon-twitter" title="twitter"></a>
-        
-        
-        
-        
-        
-    
-        
-        
-            <a href="https://weibo.com/lzhho" class="iconfont icon-weibo" title="weibo"></a>
-        
-        
-        
-        
-        
-        
-    
-        
-        
-        
-        
-            <a href="https://www.zhihu.com/people/luzhihaozh" class="iconfont icon-zhihu" title="zhihu"></a>
-        
-        
-        
-        
-    
-        
-            <a href="https://github.com/DesireL" class="iconfont icon-github" title="github"></a>
-        
-        
-        
-        
-        
-        
-        
-    
 </div>
         </div>
         <div class="right">
             <div class="copyright">
     <div class="info">
         <span>&copy;</span>
-        <span>2017 ~ 2017</span>
+        <span>1970 ~ 2017</span>
         <span>❤</span>
         <span>luzhihao</span>
     </div>
     <div class="theme">
         <span>
-            Powered By
+            动力来源于
             <a href="http://hexo.io/" target="_blank">Hexo </a>
         </span>
         <span>
@@ -249,28 +261,15 @@
         </span>
     </div>
     
-    <div class="visit_count">
-        <i class="iconfont icon-visit"></i>
-	<span id="busuanzi_value_site_pv"></span>
-	<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <i class="iconfont icon-people"></i>
-	<span id="busuanzi_value_site_uv"></span>
-    </div>
-    
 </div>
+<script type="text/javascript" src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script
 
         </div>
-	<div class="footer_music">
-	    
- 	 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=3932159&auto=0&height=66"></iframe>
-
-
-	</div>
     </div>
 </footer>
-
     </div>
     <script src="/script/nlvi.js"></script>
+<script src="/script/search.js"></script>
 
     <script src="/lightbox/js/lightbox.min.js"></script>
 
@@ -280,20 +279,49 @@ $(document).ready(function(){
     $('.progress').hide();
     $('.body').show();
     Nlvi.tagcloud();
+    Nlvi.mobileHeader();
     Nlvi.back2top();
+    Nlvi.smoothScroll();
+    Nlvi.onView();
     Nlvi.showToc();
     Nlvi.showComments();
-    Nlvi.showReward()
+    Nlvi.showReward();
 
     !CONFIG.animate && Nlvi.offAnimate();
     CONFIG.lightbox && Nlvi.onPicBox();
 })
 </script>
+
     </div>
     
     <div class="backtop syuanpi dead toTop" id="backtop">
     <i class="iconfont icon-up"></i>
     <span style="text-align:center;font-family:Georgia;"><span style="font-family:Georgia;" id="scrollpercent">1</span>%</span>
 </div>
+    
+    <div class="search" id="search">
+        <div class="mask" id="mask"></div>
+        <div class="search-wrapper syuanpi">
+            <h1 id="search-header" class="syuanpi">搜索一下？</h1>
+            <div class="input">
+                <input type="text" id="local-search-input" results="0" name="">
+            </div>
+            <div id="local-search-result"></div>
+        </div>
+    </div>
+    <script>
+    var GREETING = {
+        morning: "当我们探索时，就要发现到真理",
+        noon: "人的天职在于勇于探索真理。",
+        after: "一件事实是一条没有性别的真理",
+        night: "真理有时可能变得黯淡，但它永远不会熄灭",
+        midnight: "真理在人那里获得生命力，并且展现出来"
+    }
+    $(document).ready(function(){
+        Nlvi.search();
+    });
+    </script>
+
+<script color="7,196,239" count="50" type="text/javascript" src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
 </body>
 </html>
