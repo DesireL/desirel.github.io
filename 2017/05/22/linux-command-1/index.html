@@ -1,42 +1,22 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <title> Linux命令（一） · 欲往之城 </title>
-    <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="browsermode" content="application">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="欲往之城">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="msapplication-navbutton-color" content="#666666">
-<meta name= "format-detection" content="telephone=no" />
-<meta name="keywords" content="nlvi, Nlvi" />
-
-
-    <meta name="subtitle" content="填坑造bug">
-
-
-    <meta name="description" content="个人博客">
-
-
-
-    <meta name="keywords" content="linux, 开发, Nlvi" />
-
-<link rel="stylesheet" href="/style/style.css">
-<script src="/script/jquery.min.js"></script>
+  <link rel="stylesheet" href="/style/style.css">
 <script>
-    var CONFIG = {
-        title: "欲往之城",
-        author: "luzhihao",
-        lightbox: true,
-        animate: true
-    }
+  var nCONFIG = {
+    title: "欲往之城",
+    author: "luzhihao",
+    theme: "banderole",
+    lightbox: true,
+    animate: true,
+    baseUrl: /,
+    search: true
+  }
 </script>
 
 
 
-    <link rel="stylesheet" href="/lightbox/css/lightbox.min.css">
+    <link rel="stylesheet" href="/script/lib/lightbox/css/lightbox.min.css">
 
 
 
@@ -52,196 +32,224 @@
 
 
 
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="browsermode" content="application">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="欲往之城">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-navbutton-color" content="#666666">
+<meta name= "format-detection" content="telephone=no" />
+<meta name="keywords" content="nlvi, Nlvi" />
+
+
+  <meta name="subtitle" content="填坑造bug">
+
+
+  <meta name="description" content="个人博客">
+
+
+
+  <meta name="keywords" content="linux, 开发, Nlvi" />
+
+  <title> Linux命令（一） · 欲往之城 </title>
 </head>
 <body>
-    <div class="progress">
-    <div class="progress-inner"></div>
+  <div class="progress">
+  <div class="progress-inner"></div>
 </div>
-    <div class="body">
-    <div class="tagcloud-mask"></div>  
+  <div class="tagcloud-mask"></div>  
 <div class="tagcloud" id="tagcloud">
-    <div class="tagcloud-inner">
-        <a href="/tags/Others/" style="font-size: 14px;">Others</a> <a href="/tags/debian/" style="font-size: 14px;">debian</a> <a href="/tags/linux/" style="font-size: 14px;">linux</a> <a href="/tags/nas/" style="font-size: 14px;">nas</a> <a href="/tags/openmediavault/" style="font-size: 14px;">openmediavault</a> <a href="/tags/开发/" style="font-size: 14px;">开发</a> <a href="/tags/随笔/" style="font-size: 14px;">随笔</a>
-    </div>
+  <div class="tagcloud-inner">
+    <a href="/tags/Others/" style="font-size: 14px;">Others</a> <a href="/tags/debian/" style="font-size: 14px;">debian</a> <a href="/tags/linux/" style="font-size: 14px;">linux</a> <a href="/tags/nas/" style="font-size: 14px;">nas</a> <a href="/tags/openmediavault/" style="font-size: 14px;">openmediavault</a> <a href="/tags/开发/" style="font-size: 14px;">开发</a> <a href="/tags/随笔/" style="font-size: 14px;">随笔</a>
+  </div>
 </div>
+  <div class="container">
+
     <header class="header" id="header">
-    <div class="title syuanpi tvIn">
-    <div class="table">
-        <div class="connect">
-            <div class="connect-inner">
-                <span><a href="/">欲往之城</a></span>
-                
-                    <span id="subtitle">填坑造bug</span>
-                
-            </div>
-        </div>
-    </div>
+  <div class="header-wrapper">
+    <div class="logo">
+  <div class="logo-inner syuanpi tvIn">
+    <span><a href="/">欲往之城</a></span>
+    
+      <span id="subtitle">填坑造bug</span>
+    
+  </div>
 </div>
-
-    <nav class="main-nav syuanpi tvIn">
-<div class="table">
-
-    <ul class="menu">
+    <nav class="main-nav">
         
-        <li class="menu-item">
-            <a href="javascript:;" id="search">
-                <span>搜索</span>
-                
-                    <span class="menu-item-label">search</span>
-                
-            </a>
-        </li>
+  <ul class="main-nav-list syuanpi tvIn">
+  
+    <li class="menu-item">
+      <a href="javascript:;" id="search">
+        <span>搜索</span>
         
+          <span class="menu-item-label">search</span>
         
+      </a>
+    </li>
+  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="/" id="article">
+        <span class="base-name">文章</span>
         
-            <li class="menu-item">
+          <span class="menu-item-label">article</span>
+        
+      </a>
+    </li>  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="/archives" id="archives">
+        <span class="base-name">归档</span>
+        
+          <span class="menu-item-label">archives</span>
+        
+      </a>
+    </li>  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="javascript:;" id="tags">
+        <span class="base-name">标签</span>
+        
+          <span class="menu-item-label">tags</span>
+        
+      </a>
+    </li>  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="/about" id="about">
+        <span class="base-name">关于</span>
+        
+          <span class="menu-item-label">about</span>
+        
+      </a>
+    </li>  
+  
+  </ul>
+  
+</nav>
+  </div>
+</header>
+<div class="mobile-header">
+  <div class="mobile-header-body">
+    <div class="mobile-header-list">
+      
+        
+            <div class="mobile-nav-item">
                 <a href="/">
                     <span>文章</span>
                     
                         <span class="menu-item-label">article</span>
                     
                 </a>
-            </li>
+            </div>
         
+      
         
-        
-            <li class="menu-item">
+            <div class="mobile-nav-item">
                 <a href="/archives">
                     <span>归档</span>
                     
                         <span class="menu-item-label">archives</span>
                     
                 </a>
-            </li>
+            </div>
         
+      
         
+          <div class="mobile-nav-item inner-cloud">
+            <div class="mobile-nav-tag">
+              <a href="javascript:;" id="mobile-tags">
+                <span>标签</span>
+                
+                    <span class="menu-item-label">tags</span>
+                
+              </a>
+            </div>
+            <div class="mobile-nav-tagcloud">
+              <div class="mobile-tagcloud-inner">
+                <a href="/tags/Others/" style="font-size: 14px;">Others</a> <a href="/tags/debian/" style="font-size: 14px;">debian</a> <a href="/tags/linux/" style="font-size: 14px;">linux</a> <a href="/tags/nas/" style="font-size: 14px;">nas</a> <a href="/tags/openmediavault/" style="font-size: 14px;">openmediavault</a> <a href="/tags/开发/" style="font-size: 14px;">开发</a> <a href="/tags/随笔/" style="font-size: 14px;">随笔</a>
+              </div>
+            </div>
+          </div>
         
-            <li class="menu-item">
-                <a href="javascript:;" id="tags">
-                    <span>标签</span>
-                    
-                        <span class="menu-item-label">tags</span>
-                    
-                </a>
-            </li>
+      
         
-        
-        
-            <li class="menu-item">
+            <div class="mobile-nav-item">
                 <a href="/about">
                     <span>关于</span>
                     
                         <span class="menu-item-label">about</span>
                     
                 </a>
-            </li>
-        
-        
-    </ul>
-
-</div>
-</nav>
-</header>
-<div class="mobile-header">
-    <div class="mobile-header-body">
-        <div class="mobile-header-list">
-            
-            
-                <div class="mobile-nav-item">
-                    <a href="/">
-                        <span>文章</span>
-                        
-                            <span class="menu-item-label">article</span>
-                        
-                    </a>
-                </div>
-            
-            
-            
-                <div class="mobile-nav-item">
-                    <a href="/archives">
-                        <span>归档</span>
-                        
-                            <span class="menu-item-label">archives</span>
-                        
-                    </a>
-                </div>
-            
-            
-            
-                <div class="mobile-nav-item inner-cloud">
-                    <div class="mobile-nav-tag">
-                        <a href="javascript:;" id="mobile-tags">
-                            <span>标签</span>
-                            
-                                <span class="menu-item-label">tags</span>
-                            
-                        </a>
-                    </div>
-                    <div class="mobile-nav-tagcloud">
-                        <div class="mobile-tagcloud-inner">
-                            <a href="/tags/Others/" style="font-size: 14px;">Others</a> <a href="/tags/debian/" style="font-size: 14px;">debian</a> <a href="/tags/linux/" style="font-size: 14px;">linux</a> <a href="/tags/nas/" style="font-size: 14px;">nas</a> <a href="/tags/openmediavault/" style="font-size: 14px;">openmediavault</a> <a href="/tags/开发/" style="font-size: 14px;">开发</a> <a href="/tags/随笔/" style="font-size: 14px;">随笔</a>
-                        </div>
-                    </div>
-                </div>
-            
-            
-            
-                <div class="mobile-nav-item">
-                    <a href="/about">
-                        <span>关于</span>
-                        
-                            <span class="menu-item-label">about</span>
-                        
-                    </a>
-                </div>
-            
-            
-        </div>
-    </div>
-    <div class="mobile-header-nav">
-        <div class="mobile-header-item" id="mobile-left">
-            <div class="header-menu-item">
-                <span class="header-menu-line"></span>
             </div>
-        </div>
-        <h1 class="mobile-header-title">
-            <a href="/">欲往之城</a>
-        </h1>
-        <div class="mobile-header-item"></div>
+        
+      
     </div>
+  </div>
+  <div class="mobile-header-nav">
+    <div class="mobile-header-item" id="mobile-left">
+      <div class="header-menu-item">
+        <span class="header-menu-line"></span>
+      </div>
+    </div>
+    <h1 class="mobile-header-title">
+      <a href="/">欲往之城</a>
+    </h1>
+    <div class="mobile-header-item"></div>
+  </div>
 </div>
-
-    <div class="container">
-        <main class="main" id="main">
-            
+    <div class="container-inner">
+      <main class="main" id="main">
+        <div class="main-wrapper">
+          
     
-    <article class="post">
-        <header class="post-header">
-            <div class="post-time syuanpi riseIn-light back-1">
-                <span>2017年5月22日</span>
-                
-            </div>
-            <h1 class="post-title syuanpi riseIn-light back-2">
+  <article class="
+  post
+   is_post 
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2017-05-22</span>
+          
+          
             
-                Linux命令（一）
+              <div class="post-tags syuanpi riseIn-light back-3">
+              
+                <a href="/tags/linux/">linux</a>
+              
+                <a href="/tags/开发/">开发</a>
+              
+              </div>
             
-            </h1>
-            
-                
-                    <div class="post-tags syuanpi riseIn-light back-3">
-                    
-                        <a href="/tags/linux/">linux</a>
-                    
-                        <a href="/tags/开发/">开发</a>
-                    
-                    </div>
-                
-            
-        </header>
-        <div class="post-content syuanpi riseIn-light back-3">
-            
-                <blockquote>
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          Linux命令（一）
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+      
+        <blockquote>
 <p>作为一个猿类，熟练使用linux命令真的太重要啦，尤其是最近在折腾NAS，需要使用各种命令进行相关操作。经常发生的情况是用过某个命令，完了给忘了，用到了又要搜索😂，而且搜到的又不一定是合适的，所以有必要记录一波常用的linux相关命令以及折腾的过程中遇到的一些坑。</p>
 </blockquote>
 <h2 id="登录linux"><a href="#登录linux" class="headerlink" title="登录linux"></a>登录linux</h2><p>　　登录命令  <code>ssh user@ip</code> ，登录过程中可能会出现下面错误：<code>Unable to negotiate with 192.168.1.1 port 22: no matching host key type found. Their offer: ssh-dss</code> ，遇到这种情况是在折腾NAS的时候终端登录之后用 reboot 重启了NAS，结果重新登录出错无法登录，搜索到两个网页：</p>
@@ -272,58 +280,167 @@
 <p><code>Red Hat Enterprise Linux Server release 6.3 (Santiago)</code></p>
 <p>　　linux版本众多未一一测试，上面列出命令可以完成大部分情况下的需求。</p>
 
-            
-        
+      
+    
+    </div>
+    
+      
+      
+  <hr class="copy-line">
+  <div class="post-copyright">
+    <div class="copy-author">
+      <span>作者 :</span>
+      <span>luzhihao</span>
+    </div>
+    <div class="copy-url">
+      <span>地址 :</span>
+      <a href="http://luzhihao.me/2017/05/22/linux-command-1/">http://luzhihao.me/2017/05/22/linux-command-1/</a>
+    </div>
+    <div class="copy-origin">
+      <span>来源 :</span>
+      <a href="http://luzhihao.me">http://luzhihao.me</a>
+    </div>
+    <div class="copy-license">
+      
+      著作权归作者所有，转载请联系作者获得授权。
+    </div>
+  </div>
+
+    
+  </article>
+  
+    
+  <nav class="article-page">
+    
+      <a href="/2017/06/05/nas-openmediavault-install/" id="art-left" class="art-left">
+        <span class="next-title">
+          <i class="iconfont icon-left"></i>NAS折腾-安装Debian+OpenMediaVault
+        </span>
+      </a>
+    
+    
+      <a href="/2017/05/17/start-blog/" id="art-right" class="art-right">
+        <span class="prev-title"> 
+          开始博客记录<i class="iconfont icon-right"></i>  
+        </span>
+      </a>
+    
+  </nav>
+
+    
+  <i id="com-switch" class="iconfont icon-more jumping-in long infinite" style="font-size:24px;display:block;text-align:center;transform:rotate(180deg);"></i>
+  <div class="post-comments" id="post-comments" style="display: block;margin: auto 16px;">
+    
+    
+    
+
+  </div>
+
+    
+  <div class="post-toc">
+    <span class="title" id="toc-switch"><span>文章导航</span></span>
+    <div class="toc-inner syuanpi back-1 fallIn-light">
+      <li class="title-link"><a href="javascript:;" class="toTop">Linux命令（一）</a></li>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#登录linux"><span class="toc-text">登录linux</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看Linux版本等信息"><span class="toc-text">查看Linux版本等信息</span></a></li></ol>
+    </div>
+  </div>
+
+  
+
+
         </div>
-        
-            
-            
-        
-    </article>
-    
-        
-    <nav class="article-page">
-        
-            <a href="/2017/06/05/nas-openmediavault-install/" id="art-left" class="art-right">
-                <span class="next-title">
-                    NAS折腾-安装Debian+OpenMediaVault<i class="iconfont icon-right"></i> 
-                </span>
-            </a>
-        
-        
-            <a href="/2017/05/17/start-blog/" id="art-right" class="art-left">
-                <span class="prev-title"> 
-                    <i class="iconfont icon-left"></i>开始博客记录
-                </span>
-            </a>
-        
-    </nav>
+      </main>
 
+      <footer class="footer syuanpi fadeIn" id="footer">
+  <hr>
+  <div class="footer-wrapper">
+    <div class="left">
+      <div class="contact-icon">
+    
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        
+        
+        
+            <a href="https://www.facebook.com/1" class="iconfont icon-facebook" title="facebook"></a>
+        
+        
         
     
-
-
-        </main>
-        <footer class="footer syuanpi fadeIn" id="footer">
-    <hr>
-    <div class="footer-wrapper">
-        <div class="left">
-            <div class="contact-icon">
+        
+        
+        
+            <a href="https://twitter.com/2" class="iconfont icon-twitter" title="twitter"></a>
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+            <a href="https://www.instagram.com/3" class="iconfont icon-ins" title="instagram"></a>
+        
     
+        
+        
+            <a href="https://weibo.com/4" class="iconfont icon-weibo" title="weibo"></a>
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+            <a href="https://www.zhihu.com/people/5" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+        
+        
+        
     
+        
+            <a href="https://github.com/6" class="iconfont icon-github" title="github"></a>
+        
+        
+        
+        
+        
+        
+        
     
-    
-    
+        
+        
+        
+        
+        
+        
+            <a href="https://www.linkedin.com/in/7" class="iconfont icon-linkedin" title="linkedin"></a>
+        
+        
     
 </div>
-        </div>
-        <div class="right">
-            <div class="copyright">
+    </div>
+    <div class="right">
+      <div class="copyright">
     <div class="info">
         <span>&copy;</span>
-        <span>1970 ~ 2017</span>
+        <span>2016 ~ 2017</span>
         <span>❤</span>
         <span>luzhihao</span>
     </div>
@@ -339,68 +456,52 @@
     </div>
     
 </div>
-<script type="text/javascript" src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script
-
-        </div>
     </div>
+  </div>
 </footer>
     </div>
-    <script src="/script/nlvi.js"></script>
-<script src="/script/search.js"></script>
+  </div>
+  <script src="/script/lib/jquery/jquery-3.2.1.min.js"></script>
 
-    <script src="/lightbox/js/lightbox.min.js"></script>
 
-<script>
-$(document).ready(function(){
-    document.body.addEventListener('touchstart', function () {});
-    $('.progress').hide();
-    $('.body').show();
-    Nlvi.tagcloud();
-    Nlvi.mobileHeader();
-    Nlvi.back2top();
-    Nlvi.smoothScroll();
-    Nlvi.onView();
-    Nlvi.showToc();
-    Nlvi.showComments();
-    Nlvi.showReward();
 
-    !CONFIG.animate && Nlvi.offAnimate();
-    CONFIG.lightbox && Nlvi.onPicBox();
-})
-</script>
+    <script src="/script/lib/lightbox/js/lightbox.min.js"></script>
 
-    </div>
-    
-        
-    
-    <div class="backtop syuanpi dead toTop" id="backtop">
+
+
+
+
+
+<script src="/script/src/nlvi.js"></script>
+<script src="/script/src/utils.js"></script>
+<script src="/script/src/plugins.js"></script>
+<script src="/script/bootstarp.js"></script>
+
+
+<div class="backtop syuanpi dead toTop" id="backtop">
     <i class="iconfont icon-up"></i>
     <span style="text-align:center;font-family:Georgia;"><span style="font-family:Georgia;" id="scrollpercent">1</span>%</span>
 </div>
-    
-    <div class="search" id="search">
-        <div class="mask" id="mask"></div>
-        <div class="search-wrapper syuanpi">
-            <h1 id="search-header" class="syuanpi">搜索一下？</h1>
-            <div class="input">
-                <input type="text" id="local-search-input" results="0" name="">
-            </div>
-            <div id="local-search-result"></div>
-        </div>
-    </div>
-    <script>
-    var GREETING = {
-        morning: "当我们探索时，就要发现到真理",
-        noon: "人的天职在于勇于探索真理。",
-        after: "一件事实是一条没有性别的真理",
-        night: "真理有时可能变得黯淡，但它永远不会熄灭",
-        midnight: "真理在人那里获得生命力，并且展现出来"
-    }
-    $(document).ready(function(){
-        Nlvi.search();
-    });
-    </script>
 
-<script color="7,196,239" count="50" type="text/javascript" src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+  <div class="search" id="search">
+    <div class="mask" id="mask"></div>
+    <div class="search-wrapper syuanpi">
+      <h2 id="search-header" class="syuanpi">搜索一下？</h2>
+      <div class="input">
+        <input type="text" id="local-search-input" results="0" name="">
+      </div>
+      <div id="local-search-result"></div>
+    </div>
+  </div>
+  <script>
+  var GREETING = {
+    morning: "我的博客里可没有早饭！",
+    noon: "记得午休吃饭，不着急看我的博客~",
+    after: "下午好，感谢查阅我的博客",
+    night: "您来我的博客看笑话当做休息嘛",
+    midnight: "我觉得大半夜就不要看啦"
+  }
+  </script>
+
 </body>
 </html>
