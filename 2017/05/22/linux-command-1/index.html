@@ -4,13 +4,13 @@
   <link rel="stylesheet" href="/style/style.css">
 <script>
   var nCONFIG = {
-    title: "欲往之城",
+    title: "DesireL",
     author: "luzhihao",
     theme: "banderole",
     lightbox: true,
     animate: true,
     baseUrl: /,
-    search: true
+    search: false
   }
 </script>
 
@@ -26,9 +26,31 @@
 
 
 
+    <link rel="icon" href="http://tva3.sinaimg.cn/crop.0.0.640.640.180/006nQcI4jw8f1sogqbq59j30hs0hsjs8.jpg">
 
 
 
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99269469-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?09c10f331fa642a7db547481ad945d17";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -37,11 +59,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="browsermode" content="application">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="欲往之城">
+<meta name="apple-mobile-web-app-title" content="DesireL">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="msapplication-navbutton-color" content="#666666">
 <meta name= "format-detection" content="telephone=no" />
 <meta name="keywords" content="nlvi, Nlvi" />
+
+  <link rel="apple-touch-icon"  sizes="72x72"  href="http://tva3.sinaimg.cn/crop.0.0.640.640.180/006nQcI4jw8f1sogqbq59j30hs0hsjs8.jpg">
+  <link rel="apple-touch-icon-precomposed"  sizes="72x72"  href="http://tva3.sinaimg.cn/crop.0.0.640.640.180/006nQcI4jw8f1sogqbq59j30hs0hsjs8.jpg">
 
 
   <meta name="subtitle" content="填坑造bug">
@@ -53,7 +78,7 @@
 
   <meta name="keywords" content="linux, 开发, Nlvi" />
 
-  <title> Linux命令（一） · 欲往之城 </title>
+  <title> Linux命令（一） · DesireL </title>
 </head>
 <body>
   <div class="progress">
@@ -71,7 +96,7 @@
   <div class="header-wrapper">
     <div class="logo">
   <div class="logo-inner syuanpi tvIn">
-    <span><a href="/">欲往之城</a></span>
+    <span><a href="/">DesireL</a></span>
     
       <span id="subtitle">填坑造bug</span>
     
@@ -80,15 +105,6 @@
     <nav class="main-nav">
         
   <ul class="main-nav-list syuanpi tvIn">
-  
-    <li class="menu-item">
-      <a href="javascript:;" id="search">
-        <span>搜索</span>
-        
-          <span class="menu-item-label">search</span>
-        
-      </a>
-    </li>
   
   
     
@@ -208,7 +224,7 @@
       </div>
     </div>
     <h1 class="mobile-header-title">
-      <a href="/">欲往之城</a>
+      <a href="/">DesireL</a>
     </h1>
     <div class="mobile-header-item"></div>
   </div>
@@ -252,6 +268,7 @@
         <blockquote>
 <p>作为一个猿类，熟练使用linux命令真的太重要啦，尤其是最近在折腾NAS，需要使用各种命令进行相关操作。经常发生的情况是用过某个命令，完了给忘了，用到了又要搜索😂，而且搜到的又不一定是合适的，所以有必要记录一波常用的linux相关命令以及折腾的过程中遇到的一些坑。</p>
 </blockquote>
+<a id="more"></a>
 <h2 id="登录linux"><a href="#登录linux" class="headerlink" title="登录linux"></a>登录linux</h2><p>　　登录命令  <code>ssh user@ip</code> ，登录过程中可能会出现下面错误：<code>Unable to negotiate with 192.168.1.1 port 22: no matching host key type found. Their offer: ssh-dss</code> ，遇到这种情况是在折腾NAS的时候终端登录之后用 reboot 重启了NAS，结果重新登录出错无法登录，搜索到两个网页：</p>
 <ul>
 <li><a href="http://www.openssh.com/legacy.html" target="_blank" rel="external">方法一（未解决问题）</a>:<code>ssh -oHostKeyAlgorithms=+ssh-dss user@ip</code></li>
@@ -368,69 +385,19 @@
         
         
         
-        
-            <a href="https://www.facebook.com/1" class="iconfont icon-facebook" title="facebook"></a>
-        
-        
-        
-    
-        
-        
-        
-            <a href="https://twitter.com/2" class="iconfont icon-twitter" title="twitter"></a>
-        
+            <a href="https://www.zhihu.com/people/luzhihaozh" class="iconfont icon-zhihu" title="zhihu"></a>
         
         
         
         
     
         
+            <a href="https://github.com/DesireL" class="iconfont icon-github" title="github"></a>
         
         
         
         
         
-        
-            <a href="https://www.instagram.com/3" class="iconfont icon-ins" title="instagram"></a>
-        
-    
-        
-        
-            <a href="https://weibo.com/4" class="iconfont icon-weibo" title="weibo"></a>
-        
-        
-        
-        
-        
-        
-    
-        
-        
-        
-        
-            <a href="https://www.zhihu.com/people/5" class="iconfont icon-zhihu" title="zhihu"></a>
-        
-        
-        
-        
-    
-        
-            <a href="https://github.com/6" class="iconfont icon-github" title="github"></a>
-        
-        
-        
-        
-        
-        
-        
-    
-        
-        
-        
-        
-        
-        
-            <a href="https://www.linkedin.com/in/7" class="iconfont icon-linkedin" title="linkedin"></a>
         
         
     
@@ -440,13 +407,13 @@
       <div class="copyright">
     <div class="info">
         <span>&copy;</span>
-        <span>2016 ~ 2017</span>
+        <span>2017 ~ 2017</span>
         <span>❤</span>
         <span>luzhihao</span>
     </div>
     <div class="theme">
         <span>
-            动力来源于
+            Powered By
             <a href="http://hexo.io/" target="_blank">Hexo </a>
         </span>
         <span>
@@ -482,26 +449,6 @@
     <i class="iconfont icon-up"></i>
     <span style="text-align:center;font-family:Georgia;"><span style="font-family:Georgia;" id="scrollpercent">1</span>%</span>
 </div>
-
-  <div class="search" id="search">
-    <div class="mask" id="mask"></div>
-    <div class="search-wrapper syuanpi">
-      <h2 id="search-header" class="syuanpi">搜索一下？</h2>
-      <div class="input">
-        <input type="text" id="local-search-input" results="0" name="">
-      </div>
-      <div id="local-search-result"></div>
-    </div>
-  </div>
-  <script>
-  var GREETING = {
-    morning: "我的博客里可没有早饭！",
-    noon: "记得午休吃饭，不着急看我的博客~",
-    after: "下午好，感谢查阅我的博客",
-    night: "您来我的博客看笑话当做休息嘛",
-    midnight: "我觉得大半夜就不要看啦"
-  }
-  </script>
 
 </body>
 </html>
