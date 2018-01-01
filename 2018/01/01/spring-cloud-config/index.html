@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <link rel="stylesheet" href="/style/style.css">
+<script>
+  var nCONFIG = {
+    title: "DesireL",
+    author: "luzhihao",
+    theme: "banderole",
+    lightbox: true,
+    animate: true,
+    baseUrl: /,
+    search: false
+  }
+</script>
+
+
+
+    <link rel="stylesheet" href="/script/lib/lightbox/css/lightbox.min.css">
+
+
+
+
+    <link rel="stylesheet" href="/syuanpi/syuanpi.min.css">
+
+
+
+
+    <link rel="icon" href="http://tva3.sinaimg.cn/crop.0.0.640.640.180/006nQcI4jw8f1sogqbq59j30hs0hsjs8.jpg">
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99269469-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?09c10f331fa642a7db547481ad945d17";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="browsermode" content="application">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="DesireL">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-navbutton-color" content="#666666">
+<meta name= "format-detection" content="telephone=no" />
+<meta name="keywords" content="nlvi, Nlvi" />
+
+  <link rel="apple-touch-icon"  sizes="72x72"  href="http://tva3.sinaimg.cn/crop.0.0.640.640.180/006nQcI4jw8f1sogqbq59j30hs0hsjs8.jpg">
+  <link rel="apple-touch-icon-precomposed"  sizes="72x72"  href="http://tva3.sinaimg.cn/crop.0.0.640.640.180/006nQcI4jw8f1sogqbq59j30hs0hsjs8.jpg">
+
+
+  <meta name="subtitle" content="填坑造bug">
+
+
+  <meta name="description" content="个人博客">
+
+
+
+  <meta name="keywords" content="Java, Nlvi" />
+
+  <title> spring-cloud-config · DesireL </title>
+</head>
+<body>
+  <div class="progress">
+  <div class="progress-inner"></div>
+</div>
+  <div class="tagcloud-mask"></div>  
+<div class="tagcloud" id="tagcloud">
+  <div class="tagcloud-inner">
+    <a href="/tags/Java/" style="font-size: 14px;">Java</a> <a href="/tags/Others/" style="font-size: 14px;">Others</a> <a href="/tags/debian/" style="font-size: 14px;">debian</a> <a href="/tags/linux/" style="font-size: 14px;">linux</a> <a href="/tags/nas/" style="font-size: 14px;">nas</a> <a href="/tags/openmediavault/" style="font-size: 14px;">openmediavault</a> <a href="/tags/开发/" style="font-size: 14px;">开发</a> <a href="/tags/随笔/" style="font-size: 14px;">随笔</a>
+  </div>
+</div>
+  <div class="container">
+
+    <header class="header" id="header">
+  <div class="header-wrapper">
+    <div class="logo">
+  <div class="logo-inner syuanpi tvIn">
+    <span><a href="/">DesireL</a></span>
+    
+      <span id="subtitle">填坑造bug</span>
+    
+  </div>
+</div>
+    <nav class="main-nav">
+        
+  <ul class="main-nav-list syuanpi tvIn">
+  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="/" id="article">
+        <span class="base-name">文章</span>
+        
+          <span class="menu-item-label">article</span>
+        
+      </a>
+    </li>  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="/archives" id="archives">
+        <span class="base-name">归档</span>
+        
+          <span class="menu-item-label">archives</span>
+        
+      </a>
+    </li>  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="javascript:;" id="tags">
+        <span class="base-name">标签</span>
+        
+          <span class="menu-item-label">tags</span>
+        
+      </a>
+    </li>  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="/about" id="about">
+        <span class="base-name">关于</span>
+        
+          <span class="menu-item-label">about</span>
+        
+      </a>
+    </li>  
+  
+  </ul>
+  
+</nav>
+  </div>
+</header>
+<div class="mobile-header">
+  <div class="mobile-header-body">
+    <div class="mobile-header-list">
+      
+        
+            <div class="mobile-nav-item">
+                <a href="/">
+                    <span>文章</span>
+                    
+                        <span class="menu-item-label">article</span>
+                    
+                </a>
+            </div>
+        
+      
+        
+            <div class="mobile-nav-item">
+                <a href="/archives">
+                    <span>归档</span>
+                    
+                        <span class="menu-item-label">archives</span>
+                    
+                </a>
+            </div>
+        
+      
+        
+          <div class="mobile-nav-item inner-cloud">
+            <div class="mobile-nav-tag">
+              <a href="javascript:;" id="mobile-tags">
+                <span>标签</span>
+                
+                    <span class="menu-item-label">tags</span>
+                
+              </a>
+            </div>
+            <div class="mobile-nav-tagcloud">
+              <div class="mobile-tagcloud-inner">
+                <a href="/tags/Java/" style="font-size: 14px;">Java</a> <a href="/tags/Others/" style="font-size: 14px;">Others</a> <a href="/tags/debian/" style="font-size: 14px;">debian</a> <a href="/tags/linux/" style="font-size: 14px;">linux</a> <a href="/tags/nas/" style="font-size: 14px;">nas</a> <a href="/tags/openmediavault/" style="font-size: 14px;">openmediavault</a> <a href="/tags/开发/" style="font-size: 14px;">开发</a> <a href="/tags/随笔/" style="font-size: 14px;">随笔</a>
+              </div>
+            </div>
+          </div>
+        
+      
+        
+            <div class="mobile-nav-item">
+                <a href="/about">
+                    <span>关于</span>
+                    
+                        <span class="menu-item-label">about</span>
+                    
+                </a>
+            </div>
+        
+      
+    </div>
+  </div>
+  <div class="mobile-header-nav">
+    <div class="mobile-header-item" id="mobile-left">
+      <div class="header-menu-item">
+        <span class="header-menu-line"></span>
+      </div>
+    </div>
+    <h1 class="mobile-header-title">
+      <a href="/">DesireL</a>
+    </h1>
+    <div class="mobile-header-item"></div>
+  </div>
+</div>
+    <div class="container-inner">
+      <main class="main" id="main">
+        <div class="main-wrapper">
+          
+    
+  <article class="
+  post
+   is_post 
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2018-01-01</span>
+          
+          
+            
+              <div class="post-tags syuanpi riseIn-light back-3">
+              
+                <a href="/tags/Java/">Java</a>
+              
+              </div>
+            
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          spring-cloud-config
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+      
+        <h1 id="Spring-Cloud-Config使用过程"><a href="#Spring-Cloud-Config使用过程" class="headerlink" title="Spring Cloud Config使用过程"></a>Spring Cloud Config使用过程</h1><p>###写在开头</p>
+<blockquote>
+<p>新的一年开始了，睡懒觉一直到中午起来，涮完火锅继续看完《血战太平洋》后没事干，寻思写个博客记录一下前几天学的spring cloud config使用的整个完整过程。技术型博客写的比较少中间顺序可能不是很好，我尽量写完整清晰一点。</p>
+</blockquote>
+<a id="more"></a>
+<p>###服务发现</p>
+<p>用consul作为服务中心，不用多赘述，安装consul后启动，访问localhost:8500查看服务是否正常启动。</p>
+<p>###配置中心</p>
+<p>使用Spring Boot创建配置中心工程，命名为ConfigServerDemo。</p>
+<p>1、pom依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.5.9.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">relativePath</span>/&gt;</span> <span class="comment">&lt;!-- lookup parent from repository --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.build.sourceEncoding</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">project.reporting.outputEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.reporting.outputEncoding</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">java.version</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">spring-cloud.version</span>&gt;</span>Edgware.RELEASE<span class="tag">&lt;/<span class="name">spring-cloud.version</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">com.fasterxml.jackson.version</span>&gt;</span>2.9.2<span class="tag">&lt;/<span class="name">com.fasterxml.jackson.version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></div><div class="line">	<span class="comment">&lt;!--spring boot必须依赖--&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.fasterxml.jackson.core<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jackson-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;com.fasterxml.jackson.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.fasterxml.jackson.core<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jackson-databind<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;com.fasterxml.jackson.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.fasterxml.jackson.core<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jackson-annotations<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;com.fasterxml.jackson.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-aop<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="comment">&lt;!--配置中心依赖--&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-config-server<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="comment">&lt;!--consul微服务依赖--&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-consul-discovery<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="comment">&lt;!--微服务重试必须依赖--&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.retry<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-retry<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="comment">&lt;!--服务状态检查必须依赖--&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">dependencyManagement</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-dependencies<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring-cloud.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">type</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">type</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">scope</span>&gt;</span>import<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependencyManagement</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>主要的依赖有spring-cloud-starter-consul-discovery、spring-cloud-config-server，</p>
+<p>2、启动类开启@EnableDiscoveryClient和@EnableConfigServer，将服务注册到consul并开启配置中心。</p>
+<p>3、application.yml中添加consul配置和git配置：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="attr">server:</span></div><div class="line"><span class="attr">  port:</span> <span class="number">8081</span></div><div class="line"><span class="attr">spring:</span></div><div class="line"><span class="attr">  application:</span></div><div class="line"><span class="attr">    name:</span> <span class="string">ConfigServerDemo</span></div><div class="line"><span class="attr">  cloud:</span></div><div class="line"><span class="attr">    config:</span></div><div class="line"><span class="attr">      server:</span></div><div class="line"><span class="attr">        git:</span></div><div class="line"><span class="attr">          uri:</span> <span class="attr">https://github.com/DesireL/spring-cloud-config</span></div><div class="line"><span class="attr">          basedir:</span> <span class="string">config-repo/config-repo</span></div><div class="line"><span class="attr">    consul:</span></div><div class="line"><span class="attr">      host:</span> <span class="string">localhost</span></div><div class="line"><span class="attr">      port:</span> <span class="number">8500</span></div></pre></td></tr></table></figure>
+<p>至此配置中心已经搭建完成，git仓库中创建ConfigClientDemo.yml、ConfigClientDemo-dev.yml文件,分别加入version配置项，即可通过localhost:8081/ClientDemo/dev访问到client.yml中的配置信息:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"name"</span>: <span class="string">"ClientDemo"</span>,</div><div class="line">    <span class="attr">"profiles"</span>: [</div><div class="line">        <span class="string">"dev"</span></div><div class="line">    ],</div><div class="line">    <span class="attr">"label"</span>: <span class="string">"master"</span>,</div><div class="line">    <span class="attr">"version"</span>: <span class="string">"7da813f00029a0a9e838d983b6b76e8dae51c334"</span>,</div><div class="line">    <span class="attr">"state"</span>: <span class="literal">null</span>,</div><div class="line">    <span class="attr">"propertySources"</span>: [</div><div class="line">        &#123;</div><div class="line">            <span class="attr">"name"</span>: <span class="string">"https://github.com/DesireL/spring-cloud-config/ClientDemo-dev.yml"</span>,</div><div class="line">            <span class="attr">"source"</span>: &#123;</div><div class="line">                <span class="attr">"version"</span>: <span class="number">1</span></div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        &#123;</div><div class="line">            <span class="attr">"name"</span>: <span class="string">"https://github.com/DesireL/spring-cloud-config/ClientDemo.yml"</span>,</div><div class="line">            <span class="attr">"source"</span>: &#123;</div><div class="line">                <span class="attr">"version"</span>: <span class="number">1.01</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>访问配置信息的url与配置文件的映射关系如下：</p>
+<ul>
+<li>/{application}/{profile}[/{label}]</li>
+<li>/{application}-{profile}.yml</li>
+<li>/{label}/{application}-{profile}.yml</li>
+<li>/{application}-{profile}.properties</li>
+<li>/{label}/{application}-{profile}.properties</li>
+</ul>
+<p>###客户端</p>
+<p>在完成上述步骤和验证之后，开始在微服务应用中获取上述的配置信息。继续创建Spring Boot工程，命名为ClientDemo：</p>
+<p>1、pom依赖：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.5.9.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">relativePath</span>/&gt;</span> <span class="comment">&lt;!-- lookup parent from repository --&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">parent</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="tag">&lt;<span class="name">properties</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.build.sourceEncoding</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">project.reporting.outputEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.reporting.outputEncoding</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">java.version</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">spring-cloud.version</span>&gt;</span>Edgware.RELEASE<span class="tag">&lt;/<span class="name">spring-cloud.version</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">com.fasterxml.jackson.version</span>&gt;</span>2.9.2<span class="tag">&lt;/<span class="name">com.fasterxml.jackson.version</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">properties</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></div><div class="line">		<span class="comment">&lt;!--spring boot必须依赖--&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.fasterxml.jackson.core<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jackson-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;com.fasterxml.jackson.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.fasterxml.jackson.core<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jackson-databind<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;com.fasterxml.jackson.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.fasterxml.jackson.core<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jackson-annotations<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;com.fasterxml.jackson.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"></div><div class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-aop<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"></div><div class="line">		<span class="comment">&lt;!--配置客户端依赖--&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-config<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"></div><div class="line">		<span class="comment">&lt;!--consul服务发现依赖--&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-consul-discovery<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"></div><div class="line">		<span class="comment">&lt;!--微服务重试必须依赖--&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.retry<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-retry<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"></div><div class="line">		<span class="comment">&lt;!--服务状态检查必须依赖--&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"></div><div class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="tag">&lt;<span class="name">dependencyManagement</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-dependencies<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring-cloud.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">type</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">type</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">scope</span>&gt;</span>import<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></div><div class="line">			<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">dependencyManagement</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>2、application.yml加入程序基本配置和consul配置：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="attr">server:</span></div><div class="line"><span class="attr">  port:</span> <span class="number">8082</span></div><div class="line"><span class="attr">server:</span></div><div class="line"><span class="attr">  port:</span> <span class="number">8082</span></div><div class="line"><span class="attr">spring:</span></div><div class="line"><span class="attr">  application:</span></div><div class="line"><span class="attr">    name:</span> <span class="string">ConfigClientDemo</span></div><div class="line"><span class="attr">  cloud:</span></div><div class="line"><span class="attr">    consul:</span></div><div class="line"><span class="attr">      host:</span> <span class="string">localhost</span></div><div class="line"><span class="attr">      port:</span> <span class="number">8500</span></div></pre></td></tr></table></figure>
+<p>spring.application.name要和git中的文件名一致才能加载到配置项，比如说spring.application.name=ConfigClientDemo，则git中文件夹名必须为ConfigClientDemo.yml，ConfigClientDemo-<em>*</em>.yml。</p>
+<p>3、bootstrap.yml加入configserver配置（配置中心配置信息必须放在bootstrap文件中）：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="attr">spring:</span></div><div class="line"><span class="attr">  cloud:</span></div><div class="line"><span class="attr">    config:</span></div><div class="line"><span class="attr">      fail-fast:</span> <span class="literal">true</span></div><div class="line"><span class="attr">      discovery:</span></div><div class="line"><span class="attr">        enabled:</span> <span class="literal">true</span></div><div class="line"><span class="attr">        service-id:</span> <span class="string">ConfigServerDemo</span></div><div class="line"><span class="attr">      profile:</span> <span class="string">dev</span></div><div class="line"><span class="attr">      label:</span> <span class="string">master</span></div></pre></td></tr></table></figure>
+<p>discovery.enable设置为true开启通过服务来访问配置中心，通过service-id指定配置中心的服务名。</p>
+<p>注：此处是通过服务发现获取配置，可以不通过服务发现直接使用spring.cloud.config.url配置项直接访问配置中心的地址，如果使用服务发现的方式访问配置中心，spring.cloud.config.fail-fast必须要配置，否则无法正常启动，启动错误为<code>Consider defining a bean named &#39;configServerRetryInterceptor&#39; in your configuration.</code>。</p>
+<p>4、编写访问配置controller：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@RestController</span></div><div class="line"><span class="meta">@RefreshScope</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestController</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;version&#125;"</span>)</div><div class="line">    <span class="keyword">private</span> Double version;</div><div class="line"></div><div class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"version"</span>, method = RequestMethod.GET)</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">version</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> version.toString();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>@RefreshScope注解用来刷新配置项的值，如果不加则无法实现配置项动态刷新。</p>
+<p>启动配置中心和客户端，访问<a href="http://localhost:8082/version，返回version的值为1.0。修改ConfigClientDemo-dev.yml，将version改为1.1，post请求http://localhost:8082/refresh，返回" target="_blank" rel="external">http://localhost:8082/version，返回version的值为1.0。修改ConfigClientDemo-dev.yml，将version改为1.1，post请求http://localhost:8082/refresh，返回</a></p>
+<pre><code>[
+&quot;config.client.version&quot;,
+&quot;version&quot;
+]
+</code></pre><p>可看到version已经被更新，访问version接口加载到version最新值。post请求刷新是返回401可以增加配置management.security.enabled=false。</p>
+<p>此时已经简单实现通过服务发现配置访问配置中心，并可以动态刷新配置项。</p>
+<p>经验简单分享：客户端application.yml只配置服务名和profile以及其他不变的配置，appcalion-{profile}.yml可以分别写不同的consul配置，其他可变配置都放在git中，然后用bootstrap.yml中的spring.cloud.config.profile和application.yml中的spring.profiles.active共同指定配置文件，可以减少运维时的工作量。同时git中不建议放入server.port配置，不然服务部署多个实例时无法分配不同端口(bootstrap.yml的优先级高，实测jar包启动时加入- -server.port都无法改变git中配置的端口号)，无法实现同一机器上的多个实例部署。</p>
+<p>###使用消息总线简化操作</p>
+<p>如果服务比较多，不同服务配置更改后要分别请求服务对应的每个实例/refresh接口，增加了运维复杂度和工作量，我们可以通过加入消息总线减少工作量。</p>
+<p>####客户端使用消息总线</p>
+<p>pom依赖增加spring-cloud-starter-bus-amqp依赖，使用rabbitmq实现消息总线，git中加入rabbitmq的相关配置。重新启动客户端，仔细观察自动日志可以发现增加了/bus/refresh地址</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Mapped &quot;&#123;[/bus/refresh],methods=[POST]&#125;&quot;</div></pre></td></tr></table></figure>
+<p>进入rabbitmq后台，可以发现新增了一个名springCloudBus，类型为topic的Exchange，队列中也多了一个队列springCloudBus.anonymous.Ns34Q2MfRjuL3Sd9HPuZcA，并且已经绑定至springCloudBus中。</p>
+<p>客户端现在已经成功整合消息总线，修改git，post请求服务实例的/bus/refresh地址，重新访问version接口可以发现配置已经更新。如果服务部署多个实例，并且都成功注册到服务中心，修改配置后只需post任何一个实例的refresh接口，该服务的所有部署实例均可实现动态刷新。</p>
+<p>####服务端加入消息总线</p>
+<p>操作同上，加入对应依赖，配置文件加入rabbitmq配置，启动配置中心，启动日志看到增加/bus/refresh接口，rabbitmq中springCloudBus下增加一个新的队列。此时修改git中的信息，post请求服务中心的/bus/refresh接口，访问客户端地址发现配置已经被更新。通过此操作可以极大简化配置更改后的操作，减少了维护时的工作量。</p>
+<p>观察日志发现，加入消息总线后配置更改，post请求服务端，客户端打印如下日志</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Received remote refresh request. Keys refreshed [config.client.version, version]</div></pre></td></tr></table></figure>
+<p>至此我们实现了配置中心读取git配置内容，其他服务从配置中心读取配置，并通过消息总线实现了动态刷新。</p>
+<p>###安全保护</p>
+<p>配置中心存储较多敏感内容，很有必要做一定的安全处理，所有服务都用Spring Boot构建的话，最方便的方式就是加入Spring Security。我们不用其他复杂的改动，只加入spring-boot-starter-security就能实现对配置中心访问的安全保护。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-security<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>默认情况下，项目会分配一个名为user的用户，启动项目时会打印该用户的密码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">2018-01-01 20:43:34.906  INFO 67188 --- [           main] b.a.s.AuthenticationManagerConfiguration : </div><div class="line"></div><div class="line">Using default security password: 3af77654-1290-42b3-9ee2-e5b67c03a1a5</div></pre></td></tr></table></figure>
+<p>实际我们并不会使用随机生成的密码，配置文件中加入安全验证配置：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">security:</span></div><div class="line"><span class="attr">  user:</span></div><div class="line"><span class="attr">    name:</span> <span class="string">user</span></div><div class="line"><span class="attr">    password:</span> <span class="number">3</span><span class="string">af77654-1290-42b3-9ee2-e5b67c03a1a5</span></div></pre></td></tr></table></figure>
+<p>我们已经成功在配置中心开启安全保护，此时所有连接到配置中心的客户端都需要加入安全信息来通过校验，否则在获取配置时会返回401：<code>java.lang.IllegalStateException: Could not locate PropertySource and the fail fast property is set, failing</code>  <code>Caused by: org.springframework.web.client.HttpClientErrorException: 401 null</code>。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attr">spring:</span></div><div class="line"><span class="attr">  cloud:</span></div><div class="line"><span class="attr">    config:</span>      </div><div class="line"><span class="attr">      username:</span> <span class="string">user</span></div><div class="line"><span class="attr">      password:</span> <span class="number">3</span><span class="string">af77654-1290-42b3-9ee2-e5b67c03a1a5</span></div></pre></td></tr></table></figure>
+<p>###Git配置文件加密解密</p>
+<p>实际生产环境中，配置文件中的一些敏感配置信息明文存储在git中的话是很危险的。针对这一安全问题，Spring Cloud Config提供了对属性进行加密解密的功能，以保护配置信息的安全，比如：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attr">username:</span> <span class="string">'&#123;cipher&#125;c9624318aa718fa7cb01cbcf40fddf4038cb7ca97f152f8f31bc54db859576ee'</span></div><div class="line"><span class="attr">password:</span> <span class="string">'&#123;cipher&#125;2d0e93a7d6e7c98061a98ea910c41a4667cdf698285705d958d56b6a20b86f41'</span></div></pre></td></tr></table></figure>
+<p>在Spring Cloud Config中在属性前面使用{cipher}前缀来表示该项是一个加密值。</p>
+<p>此处我们使用对称加密来实现：</p>
+<p>1、安装不限长度的JCE：</p>
+<ul>
+<li>下载<a href="http://www.oracle.com/technetwork/cn/java/javase/downloads/jce8-download-2133166-zhs.html" target="_blank" rel="external">Unlimited Strength JCE</a></li>
+<li>解压文件，将local_policy.jar和us_export_policy.jar 复制到 $JAVA_HOME/jre/lib/security 里面覆盖原有内容</li>
+<li>配置中心添加密钥：bootstrap.yml加入encrypt.key配置（密钥配置必须放在bootstrap.yml文件中）</li>
+</ul>
+<p>2、验证：</p>
+<p>启动配置中心，查看启动日志，注意查看配置中心的特有端点打印：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Mapped &quot;&#123;[/encrypt],methods=[POST]&#125;&quot;</div><div class="line">Mapped &quot;&#123;[/encrypt/&#123;name&#125;/&#123;profiles&#125;],methods=[POST]&#125;&quot;</div><div class="line">Mapped &quot;&#123;[/decrypt/&#123;name&#125;/&#123;profiles&#125;],methods=[POST]&#125;&quot;</div><div class="line">Mapped &quot;&#123;[/decrypt],methods=[POST]&#125;&quot;</div><div class="line">Mapped &quot;&#123;[/encrypt/status],methods=[GET]&#125;&quot;</div><div class="line">Mapped &quot;&#123;[/key],methods=[GET]&#125;&quot;</div></pre></td></tr></table></figure>
+<p>/encrypt/status加密功能状态端口，返回{“status”: “OK”}表示配置密钥成功</p>
+<p>/key端口查看密钥</p>
+<p>/encrypt加密端口</p>
+<p>/decrypt解密端口</p>
+<p>3、加密解密</p>
+<p>现在对上面的version进行加密：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">curl localhost:8081/encrypt -u user:3af77654-1290-42b3-9ee2-e5b67c03a1a5 -d 1.11</div><div class="line"></div><div class="line">110c9201e76b90998fb2edcbaa233b51eaacb25f131956e0cb734cfc5b41a3a5</div></pre></td></tr></table></figure>
+<p>然后将加密的内容修改到git中：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attr">version:</span> <span class="string">'&#123;cipher&#125;110c9201e76b90998fb2edcbaa233b51eaacb25f131956e0cb734cfc5b41a3a5'</span></div></pre></td></tr></table></figure>
+<p>注：如果配置文件是yml文件，则加密的内容需要用单引号引起来。</p>
+<p>如果是数据库连接地址等复杂内容的加密，-d替换为–data-urlencode</p>
+<p>或者指定Content-Type:test/plain，举个栗子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl localhost:8081/encrypt -u user:3af77654-1290-42b3-9ee2-e5b67c03a1a5 --header &quot;Content-Type:test/plain&quot; -d &apos;jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false&amp;autoReconnect=true&apos;</div></pre></td></tr></table></figure>
+<p>以上便是基本的Spring Cloud Config配置中心和客户端的使用流程。</p>
+<p>PS：我们是通过consul来进行服务发现，consul自带key/value功能，通过consul自带k/v功能同样可以实现配置中心，同时使用consul-bus实现消息总线，基本可以达到实时自动更新配置，而且不用创建配置中心工程，微服务只需替换config依赖，使用起来更方便。</p>
+<p>如有疑问，请邮件联系lzh@luzhihao.me</p>
+
+      
+    
+    </div>
+    
+      
+      
+  <hr class="copy-line">
+  <div class="post-copyright">
+    <div class="copy-author">
+      <span>作者 :</span>
+      <span>luzhihao</span>
+    </div>
+    <div class="copy-url">
+      <span>地址 :</span>
+      <a href="http://luzhihao.me/2018/01/01/spring-cloud-config/">http://luzhihao.me/2018/01/01/spring-cloud-config/</a>
+    </div>
+    <div class="copy-origin">
+      <span>来源 :</span>
+      <a href="http://luzhihao.me">http://luzhihao.me</a>
+    </div>
+    <div class="copy-license">
+      
+      著作权归作者所有，转载请联系作者获得授权。
+    </div>
+  </div>
+
+    
+  </article>
+  
+    
+  <nav class="article-page">
+    
+    
+      <a href="/2017/06/08/wdmc-debian-nas-scheme/" id="art-right" class="art-right">
+        <span class="prev-title"> 
+          WDMC刷纯净Debian实现NAS方案<i class="iconfont icon-right"></i>  
+        </span>
+      </a>
+    
+  </nav>
+
+    
+  <i id="com-switch" class="iconfont icon-more jumping-in long infinite" style="font-size:24px;display:block;text-align:center;transform:rotate(180deg);"></i>
+  <div class="post-comments" id="post-comments" style="display: block;margin: auto 16px;">
+    
+    
+    
+
+  </div>
+
+    
+  <div class="post-toc">
+    <span class="title" id="toc-switch"><span>文章导航</span></span>
+    <div class="toc-inner syuanpi back-1 fallIn-light">
+      <li class="title-link"><a href="javascript:;" class="toTop">spring-cloud-config</a></li>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring-Cloud-Config使用过程"><span class="toc-text">Spring Cloud Config使用过程</span></a></li></ol>
+    </div>
+  </div>
+
+  
+
+
+        </div>
+      </main>
+
+      <footer class="footer syuanpi fadeIn" id="footer">
+  <hr>
+  <div class="footer-wrapper">
+    <div class="left">
+      <div class="contact-icon">
+    
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        
+        
+            <a href="https://www.zhihu.com/people/luzhihaozh" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+        
+        
+        
+    
+        
+            <a href="https://github.com/DesireL" class="iconfont icon-github" title="github"></a>
+        
+        
+        
+        
+        
+        
+        
+    
+</div>
+    </div>
+    <div class="right">
+      <div class="copyright">
+    <div class="info">
+        <span>&copy;</span>
+        <span>2017 ~ 2018</span>
+        <span>❤</span>
+        <span>luzhihao</span>
+    </div>
+    <div class="theme">
+        <span>
+            Powered By
+            <a href="http://hexo.io/" target="_blank">Hexo </a>
+        </span>
+        <span>
+            主题
+            <a href="https://github.com/ColMugX/hexo-theme-Nlvi"> Nlvi </a>
+        </span>
+    </div>
+    
+</div>
+    </div>
+  </div>
+</footer>
+    </div>
+  </div>
+  <script src="/script/lib/jquery/jquery-3.2.1.min.js"></script>
+
+
+
+    <script src="/script/lib/lightbox/js/lightbox.min.js"></script>
+
+
+
+
+
+
+<script src="/script/src/nlvi.js"></script>
+<script src="/script/src/utils.js"></script>
+<script src="/script/src/plugins.js"></script>
+<script src="/script/bootstarp.js"></script>
+
+
+<div class="backtop syuanpi dead toTop" id="backtop">
+    <i class="iconfont icon-up"></i>
+    <span style="text-align:center;font-family:Georgia;"><span style="font-family:Georgia;" id="scrollpercent">1</span>%</span>
+</div>
+
+</body>
+</html>
