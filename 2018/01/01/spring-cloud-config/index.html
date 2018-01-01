@@ -325,8 +325,7 @@
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">security:</span></div><div class="line"><span class="attr">  user:</span></div><div class="line"><span class="attr">    name:</span> <span class="string">user</span></div><div class="line"><span class="attr">    password:</span> <span class="number">3</span><span class="string">af77654-1290-42b3-9ee2-e5b67c03a1a5</span></div></pre></td></tr></table></figure>
 <p>我们已经成功在配置中心开启安全保护，此时所有连接到配置中心的客户端都需要加入安全信息来通过校验，否则在获取配置时会返回401：<code>java.lang.IllegalStateException: Could not locate PropertySource and the fail fast property is set, failing</code>  <code>Caused by: org.springframework.web.client.HttpClientErrorException: 401 null</code>。</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attr">spring:</span></div><div class="line"><span class="attr">  cloud:</span></div><div class="line"><span class="attr">    config:</span>      </div><div class="line"><span class="attr">      username:</span> <span class="string">user</span></div><div class="line"><span class="attr">      password:</span> <span class="number">3</span><span class="string">af77654-1290-42b3-9ee2-e5b67c03a1a5</span></div></pre></td></tr></table></figure>
-<p>##Git配置文件加密解密</p>
-<p>　　实际生产环境中，配置文件中的一些敏感配置信息明文存储在git中的话是很危险的。针对这一安全问题，Spring Cloud Config提供了对属性进行加密解密的功能，以保护配置信息的安全，比如：</p>
+<h2 id="Git配置文件加密解密"><a href="#Git配置文件加密解密" class="headerlink" title="Git配置文件加密解密"></a>Git配置文件加密解密</h2><p>　　实际生产环境中，配置文件中的一些敏感配置信息明文存储在git中的话是很危险的。针对这一安全问题，Spring Cloud Config提供了对属性进行加密解密的功能，以保护配置信息的安全，比如：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attr">username:</span> <span class="string">'&#123;cipher&#125;c9624318aa718fa7cb01cbcf40fddf4038cb7ca97f152f8f31bc54db859576ee'</span></div><div class="line"><span class="attr">password:</span> <span class="string">'&#123;cipher&#125;2d0e93a7d6e7c98061a98ea910c41a4667cdf698285705d958d56b6a20b86f41'</span></div></pre></td></tr></table></figure>
 <p>　　在Spring Cloud Config中在属性前面使用{cipher}前缀来表示该项是一个加密值。</p>
 <p>　　此处我们使用对称加密来实现：</p>
@@ -411,7 +410,7 @@
     <span class="title" id="toc-switch"><span>文章导航</span></span>
     <div class="toc-inner syuanpi back-1 fallIn-light">
       <li class="title-link"><a href="javascript:;" class="toTop">Spring Cloud Config使用过程</a></li>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring-Cloud-Config使用过程"><span class="toc-text">Spring Cloud Config使用过程</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring-Cloud-Config使用过程"><span class="toc-text">Spring Cloud Config使用过程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Git配置文件加密解密"><span class="toc-text">Git配置文件加密解密</span></a></li></ol></li></ol>
     </div>
   </div>
 
