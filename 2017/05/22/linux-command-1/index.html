@@ -268,7 +268,6 @@
         <blockquote>
 <p>作为一个猿类，熟练使用linux命令真的太重要啦，尤其是最近在折腾NAS，需要使用各种命令进行相关操作。经常发生的情况是用过某个命令，完了给忘了，用到了又要搜索😂，而且搜到的又不一定是合适的，所以有必要记录一波常用的linux相关命令以及折腾的过程中遇到的一些坑。</p>
 </blockquote>
-<a id="more"></a>
 <h2 id="登录linux"><a href="#登录linux" class="headerlink" title="登录linux"></a>登录linux</h2><p>　　登录命令  <code>ssh user@ip</code> ，登录过程中可能会出现下面错误：<code>Unable to negotiate with 192.168.1.1 port 22: no matching host key type found. Their offer: ssh-dss</code> ，遇到这种情况是在折腾NAS的时候终端登录之后用 reboot 重启了NAS，结果重新登录出错无法登录，搜索到两个网页：</p>
 <ul>
 <li><a href="http://www.openssh.com/legacy.html" target="_blank" rel="external">方法一（未解决问题）</a>:<code>ssh -oHostKeyAlgorithms=+ssh-dss user@ip</code></li>
